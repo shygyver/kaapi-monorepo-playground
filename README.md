@@ -24,6 +24,7 @@ This is a playground project so feel free to fork, experiment, and submit PRs wi
 ```
 /apps
   /documentation-app
+  /testing-app
 ```
 
 ---
