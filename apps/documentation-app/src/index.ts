@@ -36,6 +36,7 @@ const app = new Kaapi({
         },
 
         // explicitly set host external url for production
+        // optional for localhost as it is already defined at server's config
         host: {
             url: '{baseUrl}',
             variables: {
