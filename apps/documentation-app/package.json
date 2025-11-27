@@ -10,7 +10,9 @@
     "test": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ../../node_modules/kaukau/bin/kaukau --config kaukau-config.mjs"
   },
   "dependencies": {
-    "@kaapi/kaapi": "^0.0.31"
+    "@hapi/boom": "^10.0.1",
+    "@kaapi/kaapi": "^0.0.31",
+    "joi": "^18.0.2"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10"

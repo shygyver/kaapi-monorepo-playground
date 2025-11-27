@@ -6,8 +6,9 @@
   "main": "index.js",
   "scripts": {
     "build": "pnpm -r build",
-    "format": "cross-env NODE_OPTIONS=--experimental-strip-types prettier --write ./",
     "dev": "pnpm -r dev",
+    "format": "cross-env NODE_OPTIONS=--experimental-strip-types prettier --write ./",
+    "format:staged": "cross-env NODE_OPTIONS=--experimental-strip-types lint-staged",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test"
   },
@@ -40,7 +41,9 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "globals": "^16.5.0",
+    "husky": "^9.1.7",
     "kaukau": "^4.1.7",
+    "lint-staged": "^16.2.7",
     "nodemon": "^3.1.11",
     "prettier": "^3.6.2",
     "shx": "^0.4.0",
