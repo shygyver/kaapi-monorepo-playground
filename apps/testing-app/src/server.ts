@@ -5,6 +5,11 @@ import Joi from 'joi';
 export const app = new Kaapi({
     port: process.env.PORT || 3001,
     host: process.env.HOST || 'localhost',
+    docs: {
+        host: {
+            url: process.env.EXTERNAL_URI || '',
+        },
+    },
 });
 
 app.route({}, () => Boom.notFound('Nothing here'));

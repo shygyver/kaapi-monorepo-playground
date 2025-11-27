@@ -41,8 +41,8 @@ const app = new Kaapi({
             url: '{baseUrl}',
             variables: {
                 baseUrl: {
-                    default: 'http://localhost:3000',
-                    enum: ['http://localhost:3000'],
+                    default: process.env.EXTERNAL_URI || 'http://localhost:3000',
+                    enum: [process.env.EXTERNAL_URI || 'http://localhost:3000'],
                 },
             },
         },
