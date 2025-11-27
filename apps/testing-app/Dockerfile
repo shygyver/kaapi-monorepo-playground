@@ -8,7 +8,7 @@ WORKDIR /app
 COPY dist ./dist
 COPY package.json ./
 
-RUN corepack enable && corepack prepare pnpm@latest --activate pnpm install --prod
+RUN corepack enable && corepack prepare pnpm@latest --activate && pnpm install --prod
 
 EXPOSE 3000
 CMD [ "node", "dist/index.js" ]
