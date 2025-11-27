@@ -1,0 +1,9 @@
+services:
+  documentation-app:
+    build: ./apps/documentation-app
+    ports:
+      - 8000:3000
+  testing-app:
+    build: ./apps/testing-app
+    ports:
+      - 8001:3000

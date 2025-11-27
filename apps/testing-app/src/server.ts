@@ -3,8 +3,8 @@ import { Kaapi } from '@kaapi/kaapi';
 import Joi from 'joi';
 
 export const app = new Kaapi({
-    port: 3001,
-    host: 'localhost',
+    port: process.env.PORT || 3001,
+    host: process.env.HOST || 'localhost',
 });
 
 app.route({}, () => Boom.notFound('Nothing here'));

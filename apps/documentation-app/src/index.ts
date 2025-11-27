@@ -9,8 +9,8 @@ import Stream, { PassThrough } from 'node:stream';
 
 const app = new Kaapi({
     // Hapi's ServerOptions
-    port: 3000,
-    host: 'localhost',
+    port: process.env.PORT || 3000,
+    host: process.env.HOST || 'localhost',
 
     // winston's LoggerOptions
     loggerOptions: {
