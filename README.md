@@ -49,6 +49,26 @@ pnpm dev
 pnpm --filter documentation-app dev
 ```
 
+### 4. Using docker compose
+
+#### Build locally
+
+```bash
+pnpm build
+```
+
+#### Run all apps
+
+```bash
+docker compose up --build
+```
+
+#### Run a specific app
+
+```bash
+docker compose up --build documentation-app
+```
+
 ---
 
 ## Examples Included
