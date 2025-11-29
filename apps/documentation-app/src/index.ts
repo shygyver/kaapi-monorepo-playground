@@ -25,7 +25,7 @@ const app = new Kaapi({
         title: 'Petstore',
         license: {
             name: 'MIT',
-            url: 'https://raw.githubusercontent.com/demingongo/kaapi/refs/heads/main/LICENSE',
+            url: 'https://raw.githubusercontent.com/shygyver/kaapi-monorepo-playground/refs/heads/main/LICENSE',
         },
         version: '1.0.12',
         ui: {
@@ -218,7 +218,7 @@ app.route<{
                         responses: groupResponses(
                             new ResponseDocsModifier()
                                 .setCode(200)
-                                .setDescription('Bad Request')
+                                .setDescription('Successful operation')
                                 .addMediaType('application/json', {
                                     schema: { $ref: '#/components/schemas/Pet' }, // (OpenAPI: use reference here instead of writing the whole schema)
                                 }),
