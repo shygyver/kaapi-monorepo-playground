@@ -134,7 +134,47 @@ importers:
         specifier: ^10.0.10
         version: 10.0.10
 
+  apps/validation-app:
+    dependencies:
+      '@hapi/boom':
+        specifier: ^10.0.1
+        version: 10.0.1
+      '@kaapi/kaapi':
+        specifier: ^0.0.31
+        version: 0.0.31
+      '@kaapi/validator-arktype':
+        specifier: ^0.0.31
+        version: 0.0.31(arktype@2.1.27)
+      '@kaapi/validator-valibot':
+        specifier: ^0.0.31
+        version: 0.0.31(valibot@1.2.0(typescript@5.9.3))
+      '@kaapi/validator-zod':
+        specifier: ^0.0.31
+        version: 0.0.31(zod@4.1.13)
+      arktype:
+        specifier: ^2.1.27
+        version: 2.1.27
+      joi:
+        specifier: ^18.0.2
+        version: 18.0.2
+      valibot:
+        specifier: ^1.2.0
+        version: 1.2.0(typescript@5.9.3)
+      zod:
+        specifier: ^4.1.13
+        version: 4.1.13
+    devDependencies:
+      '@types/mocha':
+        specifier: ^10.0.10
+        version: 10.0.10
+
 packages:
+
+  '@ark/schema@0.55.0':
+    resolution: {integrity: sha512-IlSIc0FmLKTDGr4I/FzNHauMn0MADA6bCjT1wauu4k6MyxhC1R9gz0olNpIRvK7lGGDwtc/VO0RUDNvVQW5WFg==}
+
+  '@ark/util@0.55.0':
+    resolution: {integrity: sha512-aWFNK7aqSvqFtVsl1xmbTjGbg91uqtJV7Za76YGNEwIO4qLjMfyY8flmmbhooYMuqPCO2jyxu8hve943D+w3bA==}
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -715,6 +755,21 @@ packages:
   '@kaapi/server@0.0.31':
     resolution: {integrity: sha512-RBB2ZIHp8RJV5XMTKzOJ+xNiI4miiMi6c/ZQXjJeDD3E3/o7kxLs1yid4S3T0cSHsruNgK/o1KBLURmbEuWKOA==}
 
+  '@kaapi/validator-arktype@0.0.31':
+    resolution: {integrity: sha512-o6XBkugJVZCPShRH0Idcky6nhKgDvonwrRpMahh0v2+KTC3VmPaRiDaPvKgdknujusvpXiAqym4f1YMrQu1Tbw==}
+    peerDependencies:
+      arktype: ^2.1.25
+
+  '@kaapi/validator-valibot@0.0.31':
+    resolution: {integrity: sha512-zM67FTnU4vGPq+7Ar90UoRtuDmLASUr4xN4ynBcBuN0aWFTfAVftFFVTX0GGJXv7rhHi15vLNmO/fwTrr/jsAA==}
+    peerDependencies:
+      valibot: ^1.1.0
+
+  '@kaapi/validator-zod@0.0.31':
+    resolution: {integrity: sha512-0w27a4xDhOcEeeU6MvwTahyUwSUXu1Hnits58H7kV4PE6fuMfPVt7oPqpjBb5Bx5rWzMn+a/UzeCdmdzqgQS8A==}
+    peerDependencies:
+      zod: ^4.0.0
+
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
@@ -733,6 +788,12 @@ packages:
   '@novice1/api-doc-generator@1.2.3':
     resolution: {integrity: sha512-pRNhHx+KGKSvrWwGPzGLBNWcS7rQy6lZl3EoYqLkCGRWdHjQn8PJzLQz4UBYQxIEuRMR8JqJlYPQsSHQLFQjpg==}
     engines: {node: '>=16'}
+
+  '@novice1/api-doc-json-helper@1.0.6':
+    resolution: {integrity: sha512-hNHtK0xUE3aC0XzaRDti6nzOGTHAYMGf3ahCyqwTrz1yaATtel56HzQ/K4vUv05ZFRma1P7BzHtvHbW/uZHWTA==}
+
+  '@novice1/api-doc-zod-helper@0.1.9':
+    resolution: {integrity: sha512-53Fw8XwtjpodBzntm3jBK9kKjWUI2cnRW8KwFB/ikYB9y+iUXk5Lpus0ipk1MK8eDCTzRswEzg6m4i807GoOdg==}
 
   '@novice1/logger@1.6.0':
     resolution: {integrity: sha512-0pAPzAHsgVyYiM+UC75TlRC90j4e1vX+WqCwSSEPLMLa3NmVupoxAXUKmsXPu2Gkcx7QjXv0zAYs4CTHYv3fUQ==}
@@ -1109,6 +1170,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@valibot/to-json-schema@1.3.0':
+    resolution: {integrity: sha512-82Vv6x7sOYhv5YmTRgSppSqj1nn2pMCk5BqCMGWYp0V/fq+qirrbGncqZAtZ09/lrO40ne/7z8ejwE728aVreg==}
+    peerDependencies:
+      valibot: ^1.1.0
+
   accepts@2.0.0:
     resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
     engines: {node: '>= 0.6'}
@@ -1172,6 +1238,12 @@ packages:
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+
+  arkregex@0.0.3:
+    resolution: {integrity: sha512-bU21QJOJEFJK+BPNgv+5bVXkvRxyAvgnon75D92newgHxkBJTgiFwQxusyViYyJkETsddPlHyspshDQcCzmkNg==}
+
+  arktype@2.1.27:
+    resolution: {integrity: sha512-enctOHxI4SULBv/TDtCVi5M8oLd4J5SVlPUblXDzSsOYQNMzmVbUosGBnJuZDKmFlN5Ie0/QVEuTE+Z5X1UhsQ==}
 
   array-buffer-byte-length@1.0.2:
     resolution: {integrity: sha512-LHE+8BuR7RYGDKvnrmcuSq3tDcKv9OFEXQt/HpbZhY7V6h0zlUXutnAD82GiFx9rdieCMjkvtcsPqBwgUl1Iiw==}
@@ -3097,6 +3169,14 @@ packages:
     resolution: {integrity: sha512-kiGUalWN+rgBJ/1OHZsBtU4rXZOfj/7rKQxULKlIzwzQSvMJUUNgPwJEEh7gU6xEVxC0ahoOBvN2YI8GH6FNgA==}
     engines: {node: '>=10.12.0'}
 
+  valibot@1.2.0:
+    resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
@@ -3190,7 +3270,16 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@4.1.13:
+    resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
+
 snapshots:
+
+  '@ark/schema@0.55.0':
+    dependencies:
+      '@ark/util': 0.55.0
+
+  '@ark/util@0.55.0': {}
 
   '@babel/code-frame@7.27.1':
     dependencies:
@@ -3587,7 +3676,7 @@ snapshots:
   '@hapi/mimos@7.0.1':
     dependencies:
       '@hapi/hoek': 11.0.7
-      mime-db: 1.52.0
+      mime-db: 1.54.0
 
   '@hapi/nigel@5.0.1':
     dependencies:
@@ -3734,6 +3823,37 @@ snapshots:
       '@hapi/hoek': 11.0.7
       tslib: 2.8.1
 
+  '@kaapi/validator-arktype@0.0.31(arktype@2.1.27)':
+    dependencies:
+      '@hapi/boom': 10.0.1
+      '@kaapi/kaapi': 0.0.31
+      '@novice1/api-doc-json-helper': 1.0.6
+      arktype: 2.1.27
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@kaapi/validator-valibot@0.0.31(valibot@1.2.0(typescript@5.9.3))':
+    dependencies:
+      '@hapi/boom': 10.0.1
+      '@kaapi/kaapi': 0.0.31
+      '@novice1/api-doc-generator': 1.2.3
+      '@valibot/to-json-schema': 1.3.0(valibot@1.2.0(typescript@5.9.3))
+      tslib: 2.8.1
+      valibot: 1.2.0(typescript@5.9.3)
+    transitivePeerDependencies:
+      - supports-color
+
+  '@kaapi/validator-zod@0.0.31(zod@4.1.13)':
+    dependencies:
+      '@hapi/boom': 10.0.1
+      '@kaapi/kaapi': 0.0.31
+      '@novice1/api-doc-zod-helper': 0.1.9
+      tslib: 2.8.1
+      zod: 4.1.13
+    transitivePeerDependencies:
+      - supports-color
+
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
       '@emnapi/core': 1.7.1
@@ -3760,6 +3880,21 @@ snapshots:
       joi: 18.0.2
       jsontoxml: 1.0.1
       tslib: 2.8.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@novice1/api-doc-json-helper@1.0.6':
+    dependencies:
+      '@novice1/api-doc-generator': 1.2.3
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@novice1/api-doc-zod-helper@0.1.9':
+    dependencies:
+      '@novice1/api-doc-generator': 1.2.3
+      tslib: 2.8.1
+      zod: 4.1.13
     transitivePeerDependencies:
       - supports-color
 
@@ -4095,6 +4230,10 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
 
+  '@valibot/to-json-schema@1.3.0(valibot@1.2.0(typescript@5.9.3))':
+    dependencies:
+      valibot: 1.2.0(typescript@5.9.3)
+
   accepts@2.0.0:
     dependencies:
       mime-types: 3.0.2
@@ -4154,6 +4293,16 @@ snapshots:
   arg@4.1.3: {}
 
   argparse@2.0.1: {}
+
+  arkregex@0.0.3:
+    dependencies:
+      '@ark/util': 0.55.0
+
+  arktype@2.1.27:
+    dependencies:
+      '@ark/schema': 0.55.0
+      '@ark/util': 0.55.0
+      arkregex: 0.0.3
 
   array-buffer-byte-length@1.0.2:
     dependencies:
@@ -6372,6 +6521,10 @@ snapshots:
       '@types/istanbul-lib-coverage': 2.0.6
       convert-source-map: 2.0.0
 
+  valibot@1.2.0(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
+
   vary@1.1.2: {}
 
   watskeburt@5.0.0: {}
@@ -6495,3 +6648,5 @@ snapshots:
   yn@3.1.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@4.1.13: {}

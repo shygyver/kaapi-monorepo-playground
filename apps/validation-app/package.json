@@ -1,0 +1,25 @@
+{
+  "name": "@kaapi-monorepo-playground/validation-app",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit && tsup src --format esm --outDir dist --clean --metafile --dts --sourcemap",
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@kaapi/kaapi": "^0.0.31",
+    "@kaapi/validator-arktype": "^0.0.31",
+    "@kaapi/validator-valibot": "^0.0.31",
+    "@kaapi/validator-zod": "^0.0.31",
+    "arktype": "^2.1.27",
+    "joi": "^18.0.2",
+    "valibot": "^1.2.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10"
+  }
+}
