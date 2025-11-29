@@ -1,9 +1,5 @@
 # kaapi-monorepo-playground
 
-# WIP
-
-Not ready yet!
-
 A playground monorepo showcasing **Kaapi backend examples**.
 
 This is a playground project so feel free to fork, experiment, and submit PRs with new examples!
