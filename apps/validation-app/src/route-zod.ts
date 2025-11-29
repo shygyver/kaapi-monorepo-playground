@@ -6,10 +6,7 @@ import { z } from 'zod';
 const combinationPayloadSchema = z
     .object({
         n: z
-            .int()
-            .positive()
-            .min(1)
-            .max(50)
+            .preprocess((x) => Number(x), z.int().positive().min(1).max(50))
             .meta({
                 description: 'Number of total objects',
                 examples: [5],

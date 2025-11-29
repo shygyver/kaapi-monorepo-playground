@@ -1,5 +1,6 @@
 import { app } from './app';
 import { productRange } from './utils';
+import { toJsonSchema } from '@valibot/to-json-schema';
 import * as v from 'valibot';
 
 // payload schema
@@ -29,7 +30,7 @@ const combinationPayloadSchema = v.pipe(
     v.check((input) => input.n >= input.r, 'make sure that n ≥ r'),
     v.description('combination nCr inputs'),
     v.metadata({
-        $ref: '#/components/schemas/CombinationInputsWithValibot', // TODO
+        $id: '#/components/schemas/CombinationInputsWithValibot', // TODO
     })
 );
 
@@ -59,3 +60,9 @@ app.base()
             return { inputs: { n, r: r }, result };
         }
     );
+
+console.log(
+    toJsonSchema(combinationPayloadSchema, {
+        errorMode: 'warn',
+    })
+);
