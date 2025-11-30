@@ -6,7 +6,13 @@ import * as v from 'valibot';
 const combinationPayloadSchema = v.pipe(
     v.object({
         n: v.pipe(
-            v.number(),
+            v.union([
+                v.number(),
+                v.pipe(
+                    v.string(),
+                    v.transform((input) => Number(input))
+                ),
+            ]),
             v.integer(),
             v.minValue(1),
             v.maxValue(50),
@@ -17,6 +23,14 @@ const combinationPayloadSchema = v.pipe(
         ),
         r: v.optional(
             v.pipe(
+                v.union([
+                    v.number(),
+                    v.pipe(
+                        v.string(),
+                        v.transform((input) => Number(input))
+                    ),
+                ]),
+                v.integer(),
                 v.union([v.literal(1), v.literal(2), v.literal(3)]),
                 v.description('Number of objects chosen at once'),
                 v.metadata({
