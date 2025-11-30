@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@eslint/eslintrc':
-        specifier: ^3.3.1
-        version: 3.3.1
+        specifier: ^3.3.3
+        version: 3.3.3
       '@eslint/js':
         specifier: ^9.39.1
         version: 9.39.1
@@ -19,7 +19,7 @@ importers:
         version: 5.6.1(eslint@9.39.1)
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^6.0.0
-        version: 6.0.0(prettier@3.6.2)
+        version: 6.0.0(prettier@3.7.3)
       '@types/chai':
         specifier: ^5.2.3
         version: 5.2.3
@@ -75,8 +75,8 @@ importers:
         specifier: ^3.1.11
         version: 3.1.11
       prettier:
-        specifier: ^3.6.2
-        version: 3.6.2
+        specifier: ^3.7.3
+        version: 3.7.3
       shx:
         specifier: ^0.4.0
         version: 0.4.0
@@ -93,8 +93,8 @@ importers:
         specifier: ^2.29.7
         version: 2.29.7(typescript@5.9.3)
       typedoc:
-        specifier: ^0.28.14
-        version: 0.28.14(typescript@5.9.3)
+        specifier: ^0.28.15
+        version: 0.28.15(typescript@5.9.3)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -108,8 +108,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       '@kaapi/kaapi':
-        specifier: ^0.0.31
-        version: 0.0.31
+        specifier: ^0.0.33
+        version: 0.0.33
       joi:
         specifier: ^18.0.2
         version: 18.0.2
@@ -124,8 +124,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       '@kaapi/kaapi':
-        specifier: ^0.0.31
-        version: 0.0.31
+        specifier: ^0.0.33
+        version: 0.0.33
       joi:
         specifier: ^18.0.2
         version: 18.0.2
@@ -140,20 +140,17 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       '@kaapi/kaapi':
-        specifier: ^0.0.31
-        version: 0.0.31
+        specifier: ^0.0.33
+        version: 0.0.33
       '@kaapi/validator-arktype':
-        specifier: ^0.0.31
-        version: 0.0.31(arktype@2.1.27)
+        specifier: ^0.0.33
+        version: 0.0.33(arktype@2.1.27)
       '@kaapi/validator-valibot':
-        specifier: ^0.0.31
-        version: 0.0.31(valibot@1.2.0(typescript@5.9.3))
+        specifier: ^0.0.33
+        version: 0.0.33(valibot@1.2.0(typescript@5.9.3))
       '@kaapi/validator-zod':
-        specifier: ^0.0.31
-        version: 0.0.31(zod@4.1.13)
-      '@valibot/to-json-schema':
-        specifier: ^1.3.0
-        version: 1.3.0(valibot@1.2.0(typescript@5.9.3))
+        specifier: ^0.0.33
+        version: 0.0.33(zod@4.1.13)
       arktype:
         specifier: ^2.1.27
         version: 2.1.27
@@ -577,8 +574,8 @@ packages:
     resolution: {integrity: sha512-yL/sLrpmtDaFEiUj1osRP4TI2MDz1AddJL+jZ7KSqvBuliN4xqYY54IfdN8qD8Toa6g1iloph1fxQNkjOxrrpQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/eslintrc@3.3.1':
-    resolution: {integrity: sha512-gtF186CXhIl1p4pJNGZw8Yc6RlshoePRvE0X91oPGb3vZ8pM3qOS9W9NGPat9LziaBV7XrJWGylNQXkGcnM3IQ==}
+  '@eslint/eslintrc@3.3.3':
+    resolution: {integrity: sha512-Kr+LPIUVKz2qkx1HAMH8q1q6azbqBAsXJUxBl/ODDuVPX45Z9DfwB8tPjTi6nNZ8BuM3nbJxC5zCAg5elnBUTQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.39.1':
@@ -593,8 +590,8 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@gerrit0/mini-shiki@3.15.0':
-    resolution: {integrity: sha512-L5IHdZIDa4bG4yJaOzfasOH/o22MCesY0mx+n6VATbaiCtMeR59pdRqYk4bEiQkIHfxsHPNgdi7VJlZb2FhdMQ==}
+  '@gerrit0/mini-shiki@3.17.0':
+    resolution: {integrity: sha512-Bpf6WuFar20ZXL6qU6VpVl4bVQfyyYiX+6O4xrns4nkU3Mr8paeupDbS1HENpcLOYj7pN4Rkd/yCaPA0vQwKww==}
 
   '@hapi/accept@6.0.3':
     resolution: {integrity: sha512-p72f9k56EuF0n3MwlBNThyVE5PXX40g+aQh+C/xbKrfzahM2Oispv3AXmOIU51t3j77zay1qrX7IIziZXspMlw==}
@@ -752,24 +749,24 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@kaapi/kaapi@0.0.31':
-    resolution: {integrity: sha512-UM3urtJYWi3d6xw3gTu9D487xEygUZvd+RlPIiQkh7+O2AejhBgT6eK6k4OQ2jSOdTlFD8Ny93cK08VTX1OLzg==}
+  '@kaapi/kaapi@0.0.33':
+    resolution: {integrity: sha512-+PisnFZKtGMYp+9KtnN/O3xA9fP794/hHygMLlAANGFVK6hn+/xjytlsTac/jnn99Rr4MT8pOGRWXfktJTGTxw==}
 
-  '@kaapi/server@0.0.31':
-    resolution: {integrity: sha512-RBB2ZIHp8RJV5XMTKzOJ+xNiI4miiMi6c/ZQXjJeDD3E3/o7kxLs1yid4S3T0cSHsruNgK/o1KBLURmbEuWKOA==}
+  '@kaapi/server@0.0.33':
+    resolution: {integrity: sha512-E+XmNztXiLdzvo7CSeoix5owO2UuvIMYjnX+Zi177azfcFMlx2y6IMGHfeP3pt3HE9c0jUbt/Edu1zSXR9VIqA==}
 
-  '@kaapi/validator-arktype@0.0.31':
-    resolution: {integrity: sha512-o6XBkugJVZCPShRH0Idcky6nhKgDvonwrRpMahh0v2+KTC3VmPaRiDaPvKgdknujusvpXiAqym4f1YMrQu1Tbw==}
+  '@kaapi/validator-arktype@0.0.33':
+    resolution: {integrity: sha512-qU/Tb9W9pRfZscr7t8pHezsK14S5GggMDts4C/Ltbu/JwGoYwCZgjnAWBdE3l/ctuJLL4gPSSkxOVzQ+uzu3wg==}
     peerDependencies:
       arktype: ^2.1.25
 
-  '@kaapi/validator-valibot@0.0.31':
-    resolution: {integrity: sha512-zM67FTnU4vGPq+7Ar90UoRtuDmLASUr4xN4ynBcBuN0aWFTfAVftFFVTX0GGJXv7rhHi15vLNmO/fwTrr/jsAA==}
+  '@kaapi/validator-valibot@0.0.33':
+    resolution: {integrity: sha512-Lv1ueayFU+uXmJegI7fglXHCvSmP+0U8WjODcwmP+uLCP7x5Ng0KDnvjIOLmcHDtt+3nERvf0V19ZyobsCTLyQ==}
     peerDependencies:
       valibot: ^1.1.0
 
-  '@kaapi/validator-zod@0.0.31':
-    resolution: {integrity: sha512-0w27a4xDhOcEeeU6MvwTahyUwSUXu1Hnits58H7kV4PE6fuMfPVt7oPqpjBb5Bx5rWzMn+a/UzeCdmdzqgQS8A==}
+  '@kaapi/validator-zod@0.0.33':
+    resolution: {integrity: sha512-foe7hObwjyPYIEQAEAGl9qydKO4m0HIjej6tI6RRmzVGHkfH6X4Sllg9kGLF29eR876S35c3T8NAJUfCNgQJJQ==}
     peerDependencies:
       zod: ^4.0.0
 
@@ -925,17 +922,17 @@ packages:
   '@scarf/scarf@1.4.0':
     resolution: {integrity: sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ==}
 
-  '@shikijs/engine-oniguruma@3.15.0':
-    resolution: {integrity: sha512-HnqFsV11skAHvOArMZdLBZZApRSYS4LSztk2K3016Y9VCyZISnlYUYsL2hzlS7tPqKHvNqmI5JSUJZprXloMvA==}
+  '@shikijs/engine-oniguruma@3.17.0':
+    resolution: {integrity: sha512-flSbHZAiOZDNTrEbULY8DLWavu/TyVu/E7RChpLB4WvKX4iHMfj80C6Hi3TjIWaQtHOW0KC6kzMcuB5TO1hZ8Q==}
 
-  '@shikijs/langs@3.15.0':
-    resolution: {integrity: sha512-WpRvEFvkVvO65uKYW4Rzxs+IG0gToyM8SARQMtGGsH4GDMNZrr60qdggXrFOsdfOVssG/QQGEl3FnJ3EZ+8w8A==}
+  '@shikijs/langs@3.17.0':
+    resolution: {integrity: sha512-icmur2n5Ojb+HAiQu6NEcIIJ8oWDFGGEpiqSCe43539Sabpx7Y829WR3QuUW2zjTM4l6V8Sazgb3rrHO2orEAw==}
 
-  '@shikijs/themes@3.15.0':
-    resolution: {integrity: sha512-8ow2zWb1IDvCKjYb0KiLNrK4offFdkfNVPXb1OZykpLCzRU6j+efkY+Y7VQjNlNFXonSw+4AOdGYtmqykDbRiQ==}
+  '@shikijs/themes@3.17.0':
+    resolution: {integrity: sha512-/xEizMHLBmMHwtx4JuOkRf3zwhWD2bmG5BRr0IPjpcWpaq4C3mYEuTk/USAEglN0qPrTwEHwKVpSu/y2jhferA==}
 
-  '@shikijs/types@3.15.0':
-    resolution: {integrity: sha512-BnP+y/EQnhihgHy4oIAN+6FFtmfTekwOLsQbRw9hOKwqgNy8Bdsjq8B05oAt/ZgvIWWFrshV71ytOrlPfYjIJw==}
+  '@shikijs/types@3.17.0':
+    resolution: {integrity: sha512-wjLVfutYWVUnxAjsWEob98xgyaGv0dTEnMZDruU5mRjVN7szcGOfgO+997W2yR6odp+1PtSBNeSITRRTfUzK/g==}
 
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
@@ -2150,8 +2147,8 @@ packages:
     resolution: {integrity: sha512-uQPm8kcs47jx38atAcWTVxyltQYoPT68y9aWYdV6yWXSyW8mzSat0TL6CiWdZeCdF3KrAvpVtnHbTv4RN+rqdQ==}
     engines: {node: '>=0.10.0'}
 
-  is-stream@2.0.0:
-    resolution: {integrity: sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==}
+  is-stream@2.0.1:
+    resolution: {integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==}
     engines: {node: '>=8'}
 
   is-string@1.1.1:
@@ -2611,8 +2608,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier@3.6.2:
-    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+  prettier@3.7.3:
+    resolution: {integrity: sha512-QgODejq9K3OzoBbuyobZlUhznP5SKwPqp+6Q6xw6o8gnhr4O85L2U915iM2IDcfF2NPXVaM9zlo9tdwipnYwzg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2773,11 +2770,6 @@ packages:
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
-    hasBin: true
-
-  semver@7.7.2:
-    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
-    engines: {node: '>=10'}
     hasBin: true
 
   semver@7.7.3:
@@ -3117,8 +3109,8 @@ packages:
     resolution: {integrity: sha512-3KS2b+kL7fsuk/eJZ7EQdnEmQoaho/r6KUef7hxvltNA5DR8NAUM+8wJMbJyZ4G9/7i3v5zPBIMN5aybAh2/Jg==}
     engines: {node: '>= 0.4'}
 
-  typedoc@0.28.14:
-    resolution: {integrity: sha512-ftJYPvpVfQvFzpkoSfHLkJybdA/geDJ8BGQt/ZnkkhnBYoYW6lBgPQXu6vqLxO4X75dA55hX8Af847H5KXlEFA==}
+  typedoc@0.28.15:
+    resolution: {integrity: sha512-mw2/2vTL7MlT+BVo43lOsufkkd2CJO4zeOSuWQQsiXoV2VuEn7f6IZp2jsUDPmBMABpgR0R5jlcJ2OGEFYmkyg==}
     engines: {node: '>= 18', pnpm: '>= 10'}
     hasBin: true
     peerDependencies:
@@ -3542,7 +3534,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@eslint/eslintrc@3.3.1':
+  '@eslint/eslintrc@3.3.3':
     dependencies:
       ajv: 6.12.6
       debug: 4.4.3
@@ -3565,12 +3557,12 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@gerrit0/mini-shiki@3.15.0':
+  '@gerrit0/mini-shiki@3.17.0':
     dependencies:
-      '@shikijs/engine-oniguruma': 3.15.0
-      '@shikijs/langs': 3.15.0
-      '@shikijs/themes': 3.15.0
-      '@shikijs/types': 3.15.0
+      '@shikijs/engine-oniguruma': 3.17.0
+      '@shikijs/langs': 3.17.0
+      '@shikijs/themes': 3.17.0
+      '@shikijs/types': 3.17.0
       '@shikijs/vscode-textmate': 10.0.2
 
   '@hapi/accept@6.0.3':
@@ -3802,13 +3794,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@kaapi/kaapi@0.0.31':
+  '@kaapi/kaapi@0.0.33':
     dependencies:
       '@hapi/boom': 10.0.1
       '@hapi/hapi': 21.4.4
       '@hapi/hoek': 11.0.7
       '@hapi/inert': 7.1.0
-      '@kaapi/server': 0.0.31
+      '@kaapi/server': 0.0.33
       '@novice1/api-doc-generator': 1.2.3
       '@novice1/routing': 2.0.2
       jsontoxml: 1.0.1
@@ -3819,27 +3811,27 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@kaapi/server@0.0.31':
+  '@kaapi/server@0.0.33':
     dependencies:
       '@hapi/boom': 10.0.1
       '@hapi/hapi': 21.4.4
       '@hapi/hoek': 11.0.7
       tslib: 2.8.1
 
-  '@kaapi/validator-arktype@0.0.31(arktype@2.1.27)':
+  '@kaapi/validator-arktype@0.0.33(arktype@2.1.27)':
     dependencies:
       '@hapi/boom': 10.0.1
-      '@kaapi/kaapi': 0.0.31
+      '@kaapi/kaapi': 0.0.33
       '@novice1/api-doc-json-helper': 1.0.6
       arktype: 2.1.27
       tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
-  '@kaapi/validator-valibot@0.0.31(valibot@1.2.0(typescript@5.9.3))':
+  '@kaapi/validator-valibot@0.0.33(valibot@1.2.0(typescript@5.9.3))':
     dependencies:
       '@hapi/boom': 10.0.1
-      '@kaapi/kaapi': 0.0.31
+      '@kaapi/kaapi': 0.0.33
       '@novice1/api-doc-generator': 1.2.3
       '@valibot/to-json-schema': 1.3.0(valibot@1.2.0(typescript@5.9.3))
       tslib: 2.8.1
@@ -3847,10 +3839,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@kaapi/validator-zod@0.0.31(zod@4.1.13)':
+  '@kaapi/validator-zod@0.0.33(zod@4.1.13)':
     dependencies:
       '@hapi/boom': 10.0.1
-      '@kaapi/kaapi': 0.0.31
+      '@kaapi/kaapi': 0.0.33
       '@novice1/api-doc-zod-helper': 0.1.9
       tslib: 2.8.1
       zod: 4.1.13
@@ -3989,20 +3981,20 @@ snapshots:
 
   '@scarf/scarf@1.4.0': {}
 
-  '@shikijs/engine-oniguruma@3.15.0':
+  '@shikijs/engine-oniguruma@3.17.0':
     dependencies:
-      '@shikijs/types': 3.15.0
+      '@shikijs/types': 3.17.0
       '@shikijs/vscode-textmate': 10.0.2
 
-  '@shikijs/langs@3.15.0':
+  '@shikijs/langs@3.17.0':
     dependencies:
-      '@shikijs/types': 3.15.0
+      '@shikijs/types': 3.17.0
 
-  '@shikijs/themes@3.15.0':
+  '@shikijs/themes@3.17.0':
     dependencies:
-      '@shikijs/types': 3.15.0
+      '@shikijs/types': 3.17.0
 
-  '@shikijs/types@3.15.0':
+  '@shikijs/types@3.17.0':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
@@ -4026,7 +4018,7 @@ snapshots:
       estraverse: 5.3.0
       picomatch: 4.0.3
 
-  '@trivago/prettier-plugin-sort-imports@6.0.0(prettier@3.6.2)':
+  '@trivago/prettier-plugin-sort-imports@6.0.0(prettier@3.7.3)':
     dependencies:
       '@babel/generator': 7.28.5
       '@babel/parser': 7.28.5
@@ -4036,7 +4028,7 @@ snapshots:
       lodash-es: 4.17.21
       minimatch: 9.0.5
       parse-imports-exports: 0.2.4
-      prettier: 3.6.2
+      prettier: 3.7.3
     transitivePeerDependencies:
       - supports-color
 
@@ -4926,7 +4918,7 @@ snapshots:
       '@eslint/config-array': 0.21.1
       '@eslint/config-helpers': 0.4.2
       '@eslint/core': 0.17.0
-      '@eslint/eslintrc': 3.3.1
+      '@eslint/eslintrc': 3.3.3
       '@eslint/js': 9.39.1
       '@eslint/plugin-kit': 0.4.1
       '@humanfs/node': 0.16.7
@@ -5386,7 +5378,7 @@ snapshots:
 
   is-stream@1.1.0: {}
 
-  is-stream@2.0.0: {}
+  is-stream@2.0.1: {}
 
   is-string@1.1.1:
     dependencies:
@@ -5576,7 +5568,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.3
 
   make-error@1.3.6: {}
 
@@ -5844,7 +5836,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier@3.6.2: {}
+  prettier@3.7.3: {}
 
   prompts@2.4.2:
     dependencies:
@@ -6031,8 +6023,6 @@ snapshots:
   semver@5.7.2: {}
 
   semver@6.3.1: {}
-
-  semver@7.7.2: {}
 
   semver@7.7.3: {}
 
@@ -6447,9 +6437,9 @@ snapshots:
       possible-typed-array-names: 1.1.0
       reflect.getprototypeof: 1.0.10
 
-  typedoc@0.28.14(typescript@5.9.3):
+  typedoc@0.28.15(typescript@5.9.3):
     dependencies:
-      '@gerrit0/mini-shiki': 3.15.0
+      '@gerrit0/mini-shiki': 3.17.0
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
@@ -6592,7 +6582,7 @@ snapshots:
       '@colors/colors': 1.6.0
       '@dabh/diagnostics': 2.0.8
       async: 3.2.6
-      is-stream: 2.0.0
+      is-stream: 2.0.1
       logform: 2.7.0
       one-time: 1.0.0
       readable-stream: 3.6.2
