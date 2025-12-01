@@ -1,7 +1,7 @@
 import { app as kaapiApp } from './app';
-//import './route-arktype';
+import './route-arktype';
 import './route-joi';
 import './route-valibot';
 import './route-zod';
 
-export const app = kaapiApp;
+export const server = kaapiApp;

@@ -1,10 +1,10 @@
-import { app } from './server';
+import { server } from './server';
 
 // ---------- start http server ----------
 
-await app.listen();
+await server.listen();
 
-app.log(`Server running on ${app.base().info.uri}\n`);
-app.log(`Swagger UI on ${app.base().info.uri}/docs/api`);
-app.log(`OpenAPI specification on ${app.base().info.uri}/docs/api/schema`);
-app.log(`Postman collection on ${app.base().info.uri}/docs/api/schema?format=postman`);
+server.log(`Server running on ${server.base().info.uri}\n`);
+server.log(`Swagger UI on ${server.base().info.uri}/docs/api`);
+server.log(`OpenAPI specification on ${server.base().info.uri}/docs/api/schema`);
+server.log(`Postman collection on ${server.base().info.uri}/docs/api/schema?format=postman`);
