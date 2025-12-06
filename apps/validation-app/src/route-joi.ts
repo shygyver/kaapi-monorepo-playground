@@ -1,11 +1,11 @@
 import { app } from './app';
-import { productRange } from './utils';
+import { binomialCoefficient } from './utils';
 import Joi from 'joi';
 
 // payload schema
 const combinationPayloadSchema = Joi.object({
     n: Joi.number()
-        .description('Number of total objects')
+        .description('The total number of objects in the set')
         .integer()
         .min(1)
         .max(50)
@@ -17,7 +17,7 @@ const combinationPayloadSchema = Joi.object({
         .required(),
 
     r: Joi.number()
-        .description('Number of objects chosen at once')
+        .description('The number of objects chosen at once')
         .integer()
         .valid(1, 2, 3)
         .default(3)
@@ -46,12 +46,5 @@ app.route<{ Payload: { n: number; r: 1 | 2 | 3 } }>(
             },
         },
     },
-    ({ payload: { n, r } }) => {
-        let result = 1;
-        if (n != r) {
-            const sample = r < n - r ? n - r : r;
-            result = productRange(sample + 1, n) / productRange(1, n - sample);
-        }
-        return { inputs: { n, r: r }, result };
-    }
+    ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
 );

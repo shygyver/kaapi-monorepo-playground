@@ -1,5 +1,5 @@
 import { app } from './app';
-import { productRange } from './utils';
+import { binomialCoefficient } from './utils';
 import { RequestBodyDocsModifier } from '@kaapi/kaapi';
 import { type } from 'arktype';
 
@@ -8,7 +8,12 @@ const combinationPayloadSchema = type([
         n: type([
             'number.integer | string',
             '@',
-            { description: 'Number of total objects', expected: 'an integer', examples: [5], format: 'integer' },
+            {
+                description: 'The total number of objects in the set',
+                expected: 'an integer',
+                examples: [5],
+                format: 'integer',
+            },
         ])
             .pipe((v) => Number(v))
             .to('1 <= number.integer <= 50'),
@@ -16,7 +21,7 @@ const combinationPayloadSchema = type([
             '1 | 2 | 3 | string',
             '@',
             {
-                description: 'Number of objects chosen at once',
+                description: 'The number of objects chosen at once',
                 expected: '1, 2 or 3',
                 examples: [3],
                 format: 'integer',
@@ -81,12 +86,5 @@ app.base()
                 },
             },
         },
-        ({ payload: { n, r } }) => {
-            let result = 1;
-            if (n != r) {
-                const sample = r < n - r ? n - r : r;
-                result = productRange(sample + 1, n) / productRange(1, n - sample);
-            }
-            return { inputs: { n, r: r }, result };
-        }
+        ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
     );

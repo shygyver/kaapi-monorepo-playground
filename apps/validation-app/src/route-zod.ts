@@ -1,5 +1,5 @@
 import { app } from './app';
-import { productRange } from './utils';
+import { binomialCoefficient } from './utils';
 import { z } from 'zod';
 
 // payload schema
@@ -8,7 +8,7 @@ const combinationPayloadSchema = z
         n: z
             .preprocess((x) => Number(x), z.int().positive().min(1).max(50))
             .meta({
-                description: 'Number of total objects',
+                description: 'The total number of objects in the set',
                 examples: [5],
             }),
         r: z
@@ -23,7 +23,7 @@ const combinationPayloadSchema = z
             .optional()
             .default(3)
             .meta({
-                description: 'Number of objects chosen at once',
+                description: 'The number of objects chosen at once',
                 examples: [3],
             }),
     })
@@ -57,12 +57,5 @@ app.base()
                 },
             },
         },
-        ({ payload: { n, r } }) => {
-            let result = 1;
-            if (n != r) {
-                const sample = r < n - r ? n - r : r;
-                result = productRange(sample + 1, n) / productRange(1, n - sample);
-            }
-            return { inputs: { n, r: r }, result };
-        }
+        ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
     );

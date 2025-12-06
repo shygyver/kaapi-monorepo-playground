@@ -1,5 +1,5 @@
 import { app } from './app';
-import { productRange } from './utils';
+import { binomialCoefficient } from './utils';
 import * as v from 'valibot';
 
 // payload schema
@@ -16,7 +16,7 @@ const combinationPayloadSchema = v.pipe(
             v.integer(),
             v.minValue(1),
             v.maxValue(50),
-            v.description('Number of total objects'),
+            v.description('The total number of objects in the set'),
             v.metadata({
                 examples: [5],
             })
@@ -32,7 +32,7 @@ const combinationPayloadSchema = v.pipe(
                 ]),
                 v.integer(),
                 v.union([v.literal(1), v.literal(2), v.literal(3)]),
-                v.description('Number of objects chosen at once'),
+                v.description('The number of objects chosen at once'),
                 v.metadata({
                     examples: [3],
                 })
@@ -64,12 +64,5 @@ app.base()
                 },
             },
         },
-        ({ payload: { n, r } }) => {
-            let result = 1;
-            if (n != r) {
-                const sample = r < n - r ? n - r : r;
-                result = productRange(sample + 1, n) / productRange(1, n - sample);
-            }
-            return { inputs: { n, r: r }, result };
-        }
+        ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
     );
