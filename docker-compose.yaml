@@ -3,7 +3,17 @@ services:
     build: ./apps/documentation-app
     ports:
       - 8000:3000
+    environment:
+      - EXTERNAL_URI=http://localhost:8000
   testing-app:
     build: ./apps/testing-app
     ports:
       - 8001:3000
+    environment:
+      - EXTERNAL_URI=http://localhost:8001
+  validation-app:
+    build: ./apps/validation-app
+    ports:
+      - 8002:3000
+    environment:
+      - EXTERNAL_URI=http://localhost:8002
