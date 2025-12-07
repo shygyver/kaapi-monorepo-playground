@@ -21,6 +21,7 @@ This is a playground project so feel free to fork, experiment, and submit PRs wi
 /apps
   /documentation-app
   /testing-app
+  /validation-app
 ```
 
 ---
@@ -70,6 +71,7 @@ docker compose up --build documentation-app
 ## Examples Included
 
 - Documentation generation (OpenAPI, Postman, SwaggerUI)
+- Request data validation (with Arktype, Joi, Valibot, Zod)
 
 ---
 
