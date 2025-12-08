@@ -3,7 +3,7 @@ export const VALID_CLIENTS = [
     {
         client_id: 'service-api-client',
         client_secret: 's3cr3tK3y123!',
-        allowed_scopes: ['openid', 'profile', 'email', 'read'],
+        allowed_scopes: ['openid', 'profile', 'email', 'read', 'write'],
     },
 ];
 

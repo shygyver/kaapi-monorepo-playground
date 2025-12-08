@@ -9,6 +9,7 @@ import {
     OAuth2ErrorCode,
 } from '@kaapi/oauth2-auth-design';
 
+// codes store
 const authCodesStore: Map<
     string,
     { clientId: string; scopes: string[]; userId: string; codeChallenge?: string | undefined }
@@ -16,8 +17,11 @@ const authCodesStore: Map<
 
 // === OIDC Authorization Code Builder ===
 export const oidcAuthCodeBuilder = OIDCAuthorizationCodeBuilder.create()
+    // the name of the strategy
     .strategyName('oidc-auth-code')
+    // access token TTL (used in generateToken controller)
     .setTokenTTL(3600)
+    // activate auto parsing of access token (jwtAccessTokenPayload + createJwtAccessToken)
     .useAccessTokenJwks(true)
 
     // Client authentication methods
@@ -39,27 +43,33 @@ export const oidcAuthCodeBuilder = OIDCAuthorizationCodeBuilder.create()
             .setPath('/oauth2/v1.0/authorize')
             .setUsernameField('username')
             .setPasswordField('password')
+            // only validate one client id (dev)
             .setClientId(VALID_CLIENTS[0].client_id)
             .generateCode(async ({ clientId, codeChallenge, scope }, req, _h) => {
+                // client exists?
                 const client = VALID_CLIENTS.find((c) => c.client_id === clientId);
                 if (!client) return null;
 
+                // filter client's allowed scoped
                 const requestedScopes = (scope ?? '').split(/\s+/).filter(Boolean);
                 const grantedScopes = requestedScopes.length
                     ? requestedScopes.filter((s) => client.allowed_scopes.includes(s))
                     : client.allowed_scopes;
                 if (grantedScopes.length === 0) return null;
 
+                // user exists?
                 const user = REGISTERED_USERS.find(
                     (u) => u.username === req.payload.username && u.password === req.payload.password
                 );
                 if (!user) return null;
 
+                // generate code
                 const code = `auth-${Date.now()}`;
                 authCodesStore.set(code, { clientId, scopes: grantedScopes, userId: user.id, codeChallenge });
                 return { type: 'code', value: code };
             })
             .finalizeAuthorization(async (ctx, _params, _req, h) => {
+                // redirect to callback url (could do something else depending on the code result)
                 const matcher = createMatchAuthCodeResult({
                     code: async () => h.redirect(ctx.fullRedirectUri),
                     continue: async () => h.redirect(ctx.fullRedirectUri),

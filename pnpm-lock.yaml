@@ -113,6 +113,9 @@ importers:
       '@kaapi/oauth2-auth-design':
         specifier: ^0.0.34
         version: 0.0.34
+      joi:
+        specifier: ^18.0.2
+        version: 18.0.2
       winston:
         specifier: ^3.18.3
         version: 3.18.3
