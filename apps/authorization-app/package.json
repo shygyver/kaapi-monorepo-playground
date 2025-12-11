@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
-    "@kaapi/kaapi": "^0.0.34",
-    "@kaapi/oauth2-auth-design": "^0.0.34",
+    "@kaapi/kaapi": "^0.0.35",
+    "@kaapi/oauth2-auth-design": "^0.0.35",
     "joi": "^18.0.2",
-    "winston": "^3.18.3"
+    "winston": "^3.19.0"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10"

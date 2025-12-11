@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
-    "@kaapi/kaapi": "^0.0.34",
-    "@kaapi/validator-arktype": "^0.0.34",
-    "@kaapi/validator-valibot": "^0.0.34",
-    "@kaapi/validator-zod": "^0.0.34",
-    "arktype": "^2.1.27",
+    "@kaapi/kaapi": "^0.0.35",
+    "@kaapi/validator-arktype": "^0.0.35",
+    "@kaapi/validator-valibot": "^0.0.35",
+    "@kaapi/validator-zod": "^0.0.35",
+    "arktype": "^2.1.28",
     "joi": "^18.0.2",
     "valibot": "^1.2.0",
     "zod": "^4.1.13"
