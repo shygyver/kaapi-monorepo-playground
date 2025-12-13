@@ -19,7 +19,7 @@ const authCodesStore: Map<
 export const oidcAuthCodeBuilder = OIDCAuthorizationCodeBuilder.create()
     // the name of the strategy
     .strategyName('oidc-auth-code')
-    // access token TTL (used in generateToken controller)
+    // access token ttl (used in generateToken controller)
     .setTokenTTL(3600)
     // activate auto parsing of access token (jwtAccessTokenPayload + createJwtAccessToken)
     .useAccessTokenJwks(true)
@@ -47,7 +47,7 @@ export const oidcAuthCodeBuilder = OIDCAuthorizationCodeBuilder.create()
             .setClientId(VALID_CLIENTS[0].client_id)
             .generateCode(async ({ clientId, codeChallenge, scope }, req, _h) => {
                 // client exists?
-                const client = VALID_CLIENTS.find((c) => c.client_id === clientId);
+                const client = VALID_CLIENTS.find((c) => c.client_id === clientId && !c.internal);
                 if (!client) return null;
 
                 // filter client's allowed scoped
@@ -96,7 +96,7 @@ export const oidcAuthCodeBuilder = OIDCAuthorizationCodeBuilder.create()
                 const entry = authCodesStore.get(code);
                 if (!entry || entry.clientId !== clientId) return null;
 
-                const client = VALID_CLIENTS.find((c) => c.client_id === clientId);
+                const client = VALID_CLIENTS.find((c) => c.client_id === clientId && !c.internal);
                 if (!client) {
                     return {
                         error: OAuth2ErrorCode.INVALID_CLIENT,
@@ -137,6 +137,7 @@ export const oidcAuthCodeBuilder = OIDCAuthorizationCodeBuilder.create()
                 const { token: accessToken } = await createJwtAccessToken!({
                     sub: entry.userId,
                     client_id: clientId,
+                    user: true,
                     scope: entry.scopes,
                 });
 
@@ -157,7 +158,7 @@ export const oidcAuthCodeBuilder = OIDCAuthorizationCodeBuilder.create()
 
     // Step 3: Access Token Validation
     .validate(async (_req, { jwtAccessTokenPayload }) => {
-        if (!jwtAccessTokenPayload?.sub) return { isValid: false };
+        if (!jwtAccessTokenPayload?.sub || !jwtAccessTokenPayload.user) return { isValid: false };
         return {
             isValid: true,
             credentials: {

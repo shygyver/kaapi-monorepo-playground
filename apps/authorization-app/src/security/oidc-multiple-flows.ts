@@ -1,4 +1,5 @@
 import { oidcAuthCodeBuilder } from './oidc-auth-code';
+import { oidcClientCredentialsBuilder } from './oidc-client-credentials';
 import { createInMemoryKeyStore, MultipleFlowsBuilder } from '@kaapi/oauth2-auth-design';
 
 const oidcAuthFlows = MultipleFlowsBuilder.create()
@@ -11,9 +12,12 @@ const oidcAuthFlows = MultipleFlowsBuilder.create()
         timestampStore: createInMemoryKeyStore(),
     })
     .add(oidcAuthCodeBuilder)
+    .add(oidcClientCredentialsBuilder)
     .additionalConfiguration({
         userinfo_endpoint: '/v1.0/userinfo',
     })
     .build();
+
+oidcAuthFlows.setSecuritySchemeName('OpenID Connect');
 
 export default oidcAuthFlows;

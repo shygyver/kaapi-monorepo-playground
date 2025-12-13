@@ -2,13 +2,11 @@ import { Resource, RESOURCES } from '../db/resources';
 import { KaapiServerRoute } from '@kaapi/kaapi';
 import Joi from 'joi';
 
-export const getResourcesRoute: KaapiServerRoute<{
-    AuthUser: { id: string; clientId: string };
-}> = {
+export const getResourcesRoute: KaapiServerRoute = {
     method: 'GET',
     path: '/api/resources',
     auth: true,
-    options: { auth: { access: { entity: 'user', scope: ['read'] } } },
+    options: { auth: { access: { entity: 'any', scope: ['read', 'admin'] } } },
     handler: () => [...RESOURCES],
 };
 
@@ -43,5 +41,37 @@ export const postResourcesRoute: KaapiServerRoute<{
         RESOURCES.push(newResource);
 
         return newResource;
+    },
+};
+
+export const deleteResourcesRoute: KaapiServerRoute<{
+    AuthApp: { id: string };
+    Params: { id: number };
+}> = {
+    method: 'DELETE',
+    path: '/api/resources/{id}',
+    auth: true,
+    options: {
+        auth: { access: { entity: 'app', scope: ['admin'] } },
+        validate: {
+            params: Joi.object({
+                id: Joi.number().integer().required(),
+            }),
+        },
+    },
+    handler: ({
+        auth: {
+            credentials: { app },
+        },
+        params: { id },
+    }) => {
+        const idx = RESOURCES.findIndex((r) => r.id === id);
+
+        if (idx > -1) RESOURCES.splice(idx, 1);
+
+        return {
+            message: `Deleted ${idx > -1 ? 1 : 0} resource(s)`,
+            app: app?.id,
+        };
     },
 };
