@@ -1,5 +1,6 @@
 import { oidcAuthCodeBuilder } from './oidc-auth-code';
 import { oidcClientCredentialsBuilder } from './oidc-client-credentials';
+import { oidcDeviceAuthorization } from './oidc-device-auth';
 import { createInMemoryKeyStore, MultipleFlowsBuilder } from '@kaapi/oauth2-auth-design';
 
 const oidcAuthFlows = MultipleFlowsBuilder.create()
@@ -13,6 +14,7 @@ const oidcAuthFlows = MultipleFlowsBuilder.create()
     })
     .add(oidcAuthCodeBuilder)
     .add(oidcClientCredentialsBuilder)
+    .add(oidcDeviceAuthorization)
     .additionalConfiguration({
         userinfo_endpoint: '/v1.0/userinfo',
     })

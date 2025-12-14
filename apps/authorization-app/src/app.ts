@@ -1,3 +1,4 @@
+import deviceVerificationRoute from './routes/device-verification';
 import { deleteResourcesRoute, getResourcesRoute, postResourcesRoute } from './routes/resources';
 import userInfoRoute from './routes/user-info';
 import oidcAuthFlows from './security/oidc-multiple-flows';
@@ -33,4 +34,8 @@ app.base().auth.default({ strategies: oidcAuthFlows.getStrategyName(), mode: 'tr
 // Generate keys at launch
 oidcAuthFlows.checkAndRotateKeys().catch(app.log.error);
 
-app.route(userInfoRoute).route(getResourcesRoute).route(postResourcesRoute).route(deleteResourcesRoute);
+app.route(userInfoRoute)
+    .route(getResourcesRoute)
+    .route(postResourcesRoute)
+    .route(deleteResourcesRoute)
+    .route(deviceVerificationRoute);

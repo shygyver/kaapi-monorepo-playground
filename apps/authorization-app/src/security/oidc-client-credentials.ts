@@ -5,6 +5,7 @@ import {
     OAuth2ErrorCode,
     ClientSecretBasic,
     ClientSecretPost,
+    BearerToken,
 } from '@kaapi/oauth2-auth-design';
 
 // === OIDC Client Credentials Builder ===
@@ -15,11 +16,10 @@ export const oidcClientCredentialsBuilder = OIDCClientCredentialsBuilder.create(
     .setTokenTTL(600)
     // activate auto parsing of access token (jwtAccessTokenPayload + createJwtAccessToken)
     .useAccessTokenJwks(true)
-
     // Client authentication methods
     .addClientAuthenticationMethod(new ClientSecretBasic())
     .addClientAuthenticationMethod(new ClientSecretPost())
-
+    .setTokenType(new BearerToken())
     // Define available scopes
     .setScopes({
         read: 'Grants read-only access to protected resources',
