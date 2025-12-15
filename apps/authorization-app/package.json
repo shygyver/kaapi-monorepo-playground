@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc --noEmit && tsup src --format esm --outDir dist --clean --metafile --dts --sourcemap",
     "dev": "tsx watch src/index.ts",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ../../node_modules/kaukau/bin/kaukau --config kaukau-config.mjs"
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
