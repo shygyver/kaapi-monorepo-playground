@@ -27,8 +27,8 @@ importers:
         specifier: ^10.0.10
         version: 10.0.10
       '@types/node':
-        specifier: ^25.0.2
-        version: 25.0.2
+        specifier: ^25.0.3
+        version: 25.0.3
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.50.0
         version: 8.50.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(typescript@5.9.3)
@@ -82,7 +82,7 @@ importers:
         version: 0.4.0
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@25.0.2)(typescript@5.9.3)
+        version: 10.9.2(@types/node@25.0.3)(typescript@5.9.3)
       tsup:
         specifier: ^8.5.1
         version: 8.5.1(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
@@ -108,11 +108,11 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       '@kaapi/kaapi':
-        specifier: ^0.0.36
-        version: 0.0.36
+        specifier: ^0.0.37
+        version: 0.0.37
       '@kaapi/oauth2-auth-design':
-        specifier: ^0.0.36
-        version: 0.0.36
+        specifier: ^0.0.37
+        version: 0.0.37
       joi:
         specifier: ^18.0.2
         version: 18.0.2
@@ -130,8 +130,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       '@kaapi/kaapi':
-        specifier: ^0.0.36
-        version: 0.0.36
+        specifier: ^0.0.37
+        version: 0.0.37
       joi:
         specifier: ^18.0.2
         version: 18.0.2
@@ -146,8 +146,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       '@kaapi/kaapi':
-        specifier: ^0.0.36
-        version: 0.0.36
+        specifier: ^0.0.37
+        version: 0.0.37
       joi:
         specifier: ^18.0.2
         version: 18.0.2
@@ -162,17 +162,17 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       '@kaapi/kaapi':
-        specifier: ^0.0.36
-        version: 0.0.36
+        specifier: ^0.0.37
+        version: 0.0.37
       '@kaapi/validator-arktype':
-        specifier: ^0.0.36
-        version: 0.0.36(arktype@2.1.29)
+        specifier: ^0.0.37
+        version: 0.0.37(arktype@2.1.29)
       '@kaapi/validator-valibot':
-        specifier: ^0.0.36
-        version: 0.0.36(valibot@1.2.0(typescript@5.9.3))
+        specifier: ^0.0.37
+        version: 0.0.37(valibot@1.2.0(typescript@5.9.3))
       '@kaapi/validator-zod':
-        specifier: ^0.0.36
-        version: 0.0.36(zod@4.2.1)
+        specifier: ^0.0.37
+        version: 0.0.37(zod@4.2.1)
       arktype:
         specifier: ^2.1.29
         version: 2.1.29
@@ -621,31 +621,31 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@kaapi/cli@0.0.36':
-    resolution: {integrity: sha512-JsAi8m+qUPyNAaptioW46ehiPO9fQOKDP5SnuGcttu2rYI8i5GwVO1pfh34oOGktmaaRlrIFYBHBQIvmV9N6fA==}
+  '@kaapi/cli@0.0.37':
+    resolution: {integrity: sha512-KKlKzUxB0vTwqIQMMGfFCsLOdM3oEH9pdBoPL3+SAbmcsKCdTiBV70L/9KYEmxksLEjwYHLYX+6ZyBXXCrgyRg==}
     hasBin: true
 
-  '@kaapi/kaapi@0.0.36':
-    resolution: {integrity: sha512-N1DB3/y24MtLHmhckak9Ev0NVic1a+jzLTnYVMlRoPIpEPdVfJyWEXznyWEqnv5AB+MAD81fw3ABBHjg3X1SIg==}
+  '@kaapi/kaapi@0.0.37':
+    resolution: {integrity: sha512-D+GaVU4w4FtPKbVEe3gobSIRCp9m2ZHo9V7RmuC5Gd4qxvRHBeCK6I2KusKctt5XGLMXB9L/liefZsSaNlTe5A==}
 
-  '@kaapi/oauth2-auth-design@0.0.36':
-    resolution: {integrity: sha512-BcdnvXYaNVxHdEVSI3rElHYMdope3H7QLUs9mgUsKpittt5C51U8SEJJsZJ9h2SMI+5sbqlN8HYm5sE5wHuFIg==}
+  '@kaapi/oauth2-auth-design@0.0.37':
+    resolution: {integrity: sha512-K8Tbhvl0O+ypixe18dlJ73Uw93JZQa8n6RjugihRSrmaoCKtPnKLFbRwtJKfgVoq4YRBLL5YZb4UGFmbUlSHyA==}
 
-  '@kaapi/server@0.0.36':
-    resolution: {integrity: sha512-R0DpIV0EFqmaHHpw7FX7A2w/zsn2em5XpY3nUm9E5sS+3F2Tdj4GU2Rj8s6+PLVxCOsOaCy7TXBxSY6kywlIxA==}
+  '@kaapi/server@0.0.37':
+    resolution: {integrity: sha512-S8BUSDNkWwtn017Efxon+Q5toFkXIbTwmm6uUlEXno+IB59FstmGxqmZ4Oh9O41ZZJSCk07S/OR2jtV5n+lAtQ==}
 
-  '@kaapi/validator-arktype@0.0.36':
-    resolution: {integrity: sha512-TxUr6J/8HJw350RKopySXn7VuKlM1S6aRBj0L4lXntX3ZM6Mv6RegGFWZEwtsatsSVNOE7WsSvf5XSRSzdhE1Q==}
+  '@kaapi/validator-arktype@0.0.37':
+    resolution: {integrity: sha512-oMjaZYqZBHlihztwh7CzBaZdQd5vVASEJapaPQ4/pROLXhp7t3SoOozfnvquZQhgDwF5ZQOpjvu5M54oIfaVJg==}
     peerDependencies:
       arktype: ^2.1.25
 
-  '@kaapi/validator-valibot@0.0.36':
-    resolution: {integrity: sha512-Nol4fMQ8+s2Lx98MStpzKN4TyzFNvpfjuQRL62Bu+VlV0ffk+C1nmFFUxlyEnEXJT/fwUt/T0h7aQYCUvWrGDA==}
+  '@kaapi/validator-valibot@0.0.37':
+    resolution: {integrity: sha512-LeqS4NQxpm5giI23NCpjJUZh0bj6gEY1zr/jmvMnljohY3kglxdNTHFwgvlDryIXsTlq+b4VTuAWqqb4N0kANA==}
     peerDependencies:
       valibot: ^1.1.0
 
-  '@kaapi/validator-zod@0.0.36':
-    resolution: {integrity: sha512-p8S1KmyC+JC5DVEMnV/TSs6PJDK/yJxhtbtQt4/r/0ELTn0c/1mPKNsOc1xMzmbO2wSbDI2jPH/Z3vURZdNziA==}
+  '@kaapi/validator-zod@0.0.37':
+    resolution: {integrity: sha512-uY4wVOfIoBtE98Y7JTilbKH1DaAfSs58LkaPBIDHk+ICOwmZ5UtEjauqd829vv753hghhy5Ha7DehOudK0K+aQ==}
     peerDependencies:
       zod: ^4.0.0
 
@@ -886,8 +886,8 @@ packages:
   '@types/mocha@10.0.10':
     resolution: {integrity: sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==}
 
-  '@types/node@25.0.2':
-    resolution: {integrity: sha512-gWEkeiyYE4vqjON/+Obqcoeffmk0NF15WSBwSs7zwVA2bAbTaE0SJ7P0WNGoJn8uE7fiaV5a7dKYIJriEqOrmA==}
+  '@types/node@25.0.3':
+    resolution: {integrity: sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA==}
 
   '@types/triple-beam@1.3.5':
     resolution: {integrity: sha512-6WaYesThRMCl19iryMYP7/x2OVgCtbIVflDGFpWnb9irXI3UjYE4AzmYuiUKY1AJstGijoY+MgUszMgRxIYTYw==}
@@ -2198,8 +2198,8 @@ packages:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
 
-  lodash-es@4.17.21:
-    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+  lodash-es@4.17.22:
+    resolution: {integrity: sha512-XEawp1t0gxSi9x01glktRZ5HDy0HXqrM0x5pXQM98EaI0NxO6jVM7omDOxsuEo5UIASAnm2bRp1Jt/e0a2XU8Q==}
 
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -3662,20 +3662,20 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@kaapi/cli@0.0.36':
+  '@kaapi/cli@0.0.37':
     dependencies:
       '@clack/prompts': 0.11.0
       lodash: 4.17.21
       mri: 1.2.0
       tslib: 2.8.1
 
-  '@kaapi/kaapi@0.0.36':
+  '@kaapi/kaapi@0.0.37':
     dependencies:
       '@hapi/boom': 10.0.1
       '@hapi/hapi': 21.4.4
       '@hapi/hoek': 11.0.7
       '@hapi/inert': 7.1.0
-      '@kaapi/server': 0.0.36
+      '@kaapi/server': 0.0.37
       '@novice1/api-doc-generator': 1.2.5
       '@novice1/routing': 2.0.2
       jsontoxml: 1.0.1
@@ -3686,12 +3686,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@kaapi/oauth2-auth-design@0.0.36':
+  '@kaapi/oauth2-auth-design@0.0.37':
     dependencies:
       '@hapi/boom': 10.0.1
       '@hapi/hoek': 11.0.7
-      '@kaapi/cli': 0.0.36
-      '@kaapi/kaapi': 0.0.36
+      '@kaapi/cli': 0.0.37
+      '@kaapi/kaapi': 0.0.37
       '@novice1/api-doc-generator': 1.2.5
       html-entities: 2.6.0
       jose: 6.1.3
@@ -3701,27 +3701,27 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@kaapi/server@0.0.36':
+  '@kaapi/server@0.0.37':
     dependencies:
       '@hapi/boom': 10.0.1
       '@hapi/hapi': 21.4.4
       '@hapi/hoek': 11.0.7
       tslib: 2.8.1
 
-  '@kaapi/validator-arktype@0.0.36(arktype@2.1.29)':
+  '@kaapi/validator-arktype@0.0.37(arktype@2.1.29)':
     dependencies:
       '@hapi/boom': 10.0.1
-      '@kaapi/kaapi': 0.0.36
+      '@kaapi/kaapi': 0.0.37
       '@novice1/api-doc-json-helper': 1.0.8
       arktype: 2.1.29
       tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
-  '@kaapi/validator-valibot@0.0.36(valibot@1.2.0(typescript@5.9.3))':
+  '@kaapi/validator-valibot@0.0.37(valibot@1.2.0(typescript@5.9.3))':
     dependencies:
       '@hapi/boom': 10.0.1
-      '@kaapi/kaapi': 0.0.36
+      '@kaapi/kaapi': 0.0.37
       '@novice1/api-doc-generator': 1.2.5
       '@valibot/to-json-schema': 1.5.0(valibot@1.2.0(typescript@5.9.3))
       tslib: 2.8.1
@@ -3729,10 +3729,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@kaapi/validator-zod@0.0.36(zod@4.2.1)':
+  '@kaapi/validator-zod@0.0.37(zod@4.2.1)':
     dependencies:
       '@hapi/boom': 10.0.1
-      '@kaapi/kaapi': 0.0.36
+      '@kaapi/kaapi': 0.0.37
       '@novice1/api-doc-zod-helper': 0.1.9
       tslib: 2.8.1
       zod: 4.2.1
@@ -3915,7 +3915,7 @@ snapshots:
       '@babel/traverse': 7.28.5
       '@babel/types': 7.28.5
       javascript-natural-sort: 0.7.1
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       minimatch: 9.0.5
       parse-imports-exports: 0.2.4
       prettier: 3.7.4
@@ -3956,7 +3956,7 @@ snapshots:
 
   '@types/mocha@10.0.10': {}
 
-  '@types/node@25.0.2':
+  '@types/node@25.0.3':
     dependencies:
       undici-types: 7.16.0
 
@@ -5432,7 +5432,7 @@ snapshots:
     dependencies:
       p-locate: 5.0.0
 
-  lodash-es@4.17.21: {}
+  lodash-es@4.17.22: {}
 
   lodash.merge@4.6.2: {}
 
@@ -6224,14 +6224,14 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@types/node@25.0.2)(typescript@5.9.3):
+  ts-node@10.9.2(@types/node@25.0.3)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.12
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 25.0.2
+      '@types/node': 25.0.3
       acorn: 8.15.0
       acorn-walk: 8.3.4
       arg: 4.1.3

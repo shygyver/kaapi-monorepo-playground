@@ -55,8 +55,8 @@ export const oidcDeviceAuthorization = OIDCDeviceAuthorizationBuilder.create()
             return {
                 device_code: deviceCode,
                 user_code: userCode,
-                verification_uri: 'http://localhost:3000/verify',
-                verification_uri_complete: `http://localhost:3000/verify?user_code=${userCode}`,
+                verification_uri: 'http://localhost:3000/v1.0/verify',
+                verification_uri_complete: `http://localhost:3000/v1.0/verify?user_code=${userCode}`,
                 expires_in: 600,
                 interval: 5,
             };
