@@ -11,14 +11,14 @@
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
-    "@kaapi/kaapi": "^0.0.35",
-    "@kaapi/validator-arktype": "^0.0.35",
-    "@kaapi/validator-valibot": "^0.0.35",
-    "@kaapi/validator-zod": "^0.0.35",
-    "arktype": "^2.1.28",
+    "@kaapi/kaapi": "^0.0.36",
+    "@kaapi/validator-arktype": "^0.0.36",
+    "@kaapi/validator-valibot": "^0.0.36",
+    "@kaapi/validator-zod": "^0.0.36",
+    "arktype": "^2.1.29",
     "joi": "^18.0.2",
     "valibot": "^1.2.0",
-    "zod": "^4.1.13"
+    "zod": "^4.2.1"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10"

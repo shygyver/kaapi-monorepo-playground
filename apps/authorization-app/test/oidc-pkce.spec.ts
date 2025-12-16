@@ -128,7 +128,7 @@ describe('OIDC Auth Code Flow with PKCE', function () {
             payload: { username: 'user', password: 'wrong-password' },
         });
 
-        expect(authRes.statusCode).to.equal(400); // TODO: change it to 401
+        expect(authRes.statusCode).to.equal(401);
         expect(authRes.headers['content-type']).to.include('text/html');
         expect(authRes.payload).to.include('wrong credentials');
     });

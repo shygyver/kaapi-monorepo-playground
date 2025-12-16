@@ -32,6 +32,11 @@ const app = new Kaapi({
             swagger: {
                 customCss: '.swagger-ui .topbar { display: none; }',
                 customSiteTitle: 'Swagger UI - Petstore',
+                customJsStr: `
+                setTimeout(() => {
+                if (document.documentElement.classList.contains("dark-mode")) { document.documentElement.classList.remove("dark-mode"); }
+                }, 10);
+                `,
             },
         },
 
