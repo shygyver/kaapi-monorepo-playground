@@ -13,7 +13,7 @@ export const oidcClientCredentialsBuilder = OIDCClientCredentialsBuilder.create(
     // the name of the strategy
     .strategyName('oidc-client-credentials')
     // access token ttl (used in generateToken controller)
-    .setTokenTTL(600)
+    .setTokenTtl(600)
     // activate auto parsing of access token (jwtAccessTokenPayload + createJwtAccessToken)
     .useAccessTokenJwks(true)
     // Client authentication methods

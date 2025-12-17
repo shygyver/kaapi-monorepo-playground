@@ -20,7 +20,7 @@ export const oidcAuthCodeBuilder = OIDCAuthorizationCodeBuilder.create()
     // the name of the strategy
     .strategyName('oidc-auth-code')
     // access token ttl (used in generateToken controller)
-    .setTokenTTL(3600)
+    .setTokenTtl(3600)
     // activate auto parsing of access token (jwtAccessTokenPayload + createJwtAccessToken)
     .useAccessTokenJwks(true)
 

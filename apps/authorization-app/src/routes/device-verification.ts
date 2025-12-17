@@ -5,22 +5,26 @@ import { KaapiServerRoute } from '@kaapi/kaapi';
 import { OAuth2ErrorCode } from '@kaapi/oauth2-auth-design';
 import Joi from 'joi';
 
-const deviceVerificationRoute: KaapiServerRoute<{ AuthUser: { id: string; clientId: string } }> = {
+const deviceVerificationRoute: KaapiServerRoute<{
+    AuthUser: { id: string };
+    Query: { user_code: string };
+}> = {
     method: 'GET',
-    path: '/v1.0/verify',
+    path: '/v1.0/verify-device',
     auth: true,
     options: {
         auth: {
             strategies: oidcAuthFlows.getStrategyName(), // Ensures only OIDC strategies are used
-            access: {
-                entity: 'user', // Ensures token belongs to a user
-                scope: ['openid'], // Requires 'openid' scope
-            },
         },
         validate: {
             query: Joi.object({
-                user_code: Joi.string(),
+                user_code: Joi.string().required(),
             }),
+        },
+        plugins: {
+            kaapi: {
+                docs: false,
+            },
         },
     },
     handler: (request, h) => {
@@ -31,20 +35,31 @@ const deviceVerificationRoute: KaapiServerRoute<{ AuthUser: { id: string; client
                     error: OAuth2ErrorCode.INVALID_REQUEST,
                     error_description: 'Invalid or unknown user claims.',
                 })
-                .code(403);
+                .code(400);
         }
 
         const userCode = request.query.user_code;
-        if (!userCode) return h.response('Missing user_code').code(400);
-
         const entry = Array.from(deviceCodesStore.values()).find((v) => v.userCode === userCode);
-        if (!entry) return h.response('Invalid user_code').code(404);
+        if (!entry)
+            return h
+                .response({
+                    error: OAuth2ErrorCode.INVALID_REQUEST,
+                    error_description: 'Invalid or unknown user claims.',
+                })
+                .code(400);
+
+        // already verified
+        if (entry.verified) {
+            return h
+                .response({
+                    error: OAuth2ErrorCode.INVALID_REQUEST,
+                })
+                .code(400);
+        }
 
         entry.userId = userData.id;
         entry.verified = true;
-        return h.response(
-            `Device verified successfully for client: ${entry.clientId}, scopes: ${entry.scopes.join(' ')}`
-        );
+        return h.response('ok');
     },
 };
 

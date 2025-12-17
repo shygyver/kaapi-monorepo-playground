@@ -7,6 +7,7 @@ import {
     NoneAuthMethod,
     DeviceFlowOAuth2ErrorCode,
     BearerToken,
+    OAuth2ErrorCode,
 } from '@kaapi/oauth2-auth-design';
 
 // Valid clients and allowed scopes
@@ -21,7 +22,7 @@ export const oidcDeviceAuthorization = OIDCDeviceAuthorizationBuilder.create()
     // the name of the strategy
     .strategyName('oidc-device-auth')
     // access token ttl (used in generateToken controller)
-    .setTokenTTL(600)
+    .setTokenTtl(600)
     // activate auto parsing of access token (jwtAccessTokenPayload + createJwtAccessToken)
     .useAccessTokenJwks(true)
     // Client authentication methods
@@ -52,11 +53,12 @@ export const oidcDeviceAuthorization = OIDCDeviceAuthorizationBuilder.create()
 
             deviceCodesStore.set(deviceCode, { clientId, scopes: grantedScopes, verified: false, userCode });
 
+            const verificationUri = 'http://localhost:3000/v1.0/verify-device';
             return {
                 device_code: deviceCode,
                 user_code: userCode,
-                verification_uri: 'http://localhost:3000/v1.0/verify',
-                verification_uri_complete: `http://localhost:3000/v1.0/verify?user_code=${userCode}`,
+                verification_uri: verificationUri,
+                verification_uri_complete: `${verificationUri}?user_code=${userCode}`,
                 expires_in: 600,
                 interval: 5,
             };
@@ -67,14 +69,14 @@ export const oidcDeviceAuthorization = OIDCDeviceAuthorizationBuilder.create()
     .tokenRoute((route) =>
         route.generateToken(async ({ deviceCode, clientId, ttl, tokenType, createJwtAccessToken, createIdToken }) => {
             const entry = deviceCodesStore.get(deviceCode);
-            if (!entry || entry.clientId !== clientId) return null;
+            if (!entry || entry.clientId !== clientId) return { error: OAuth2ErrorCode.INVALID_GRANT };
 
             if (!entry.verified || !entry.userId) return { error: DeviceFlowOAuth2ErrorCode.AUTHORIZATION_PENDING };
 
             const user = REGISTERED_USERS.find((u) => u.id === entry.userId);
             if (!user) {
                 return {
-                    error: DeviceFlowOAuth2ErrorCode.ACCESS_DENIED,
+                    error: OAuth2ErrorCode.INVALID_GRANT,
                     error_description: 'Invalid authorization grant.',
                 };
             }

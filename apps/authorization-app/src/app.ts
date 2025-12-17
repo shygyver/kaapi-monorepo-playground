@@ -3,6 +3,7 @@ import { deleteResourcesRoute, getResourcesRoute, postResourcesRoute } from './r
 import userInfoRoute from './routes/user-info';
 import oidcAuthFlows from './security/oidc-multiple-flows';
 import { logger } from './utils/logger';
+import yar from '@hapi/yar';
 import { Kaapi } from '@kaapi/kaapi';
 
 export const app = new Kaapi({
@@ -17,18 +18,22 @@ export const app = new Kaapi({
             swagger: {
                 customCss: '.swagger-ui .topbar { display: none; }',
                 customSiteTitle: 'Authorization app',
-                customJsStr: `
-                setTimeout(() => {
-                if (document.documentElement.classList.contains("dark-mode")) { document.documentElement.classList.remove("dark-mode"); }
-                }, 10);
-                `,
             },
         },
     },
     logger,
 });
 
-app.openapi.setServers([]);
+await app.base().register({
+    plugin: yar,
+    options: {
+        storeBlank: false,
+        cookieOptions: {
+            password: 'the-password-must-be-at-least-32-characters-long',
+            isSecure: true,
+        },
+    },
+});
 
 // Extend app with auth strategy
 await app.extend(oidcAuthFlows);
