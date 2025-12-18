@@ -73,7 +73,7 @@ describe('OIDC Device Authorization Flow', function () {
                         id: 'user-1234',
                     },
                 },
-                strategy: 'session',
+                strategy: 'cookie-session',
             },
         });
         expect(userRes.statusCode).to.equal(200);

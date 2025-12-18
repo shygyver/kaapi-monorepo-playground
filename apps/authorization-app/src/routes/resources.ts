@@ -6,7 +6,10 @@ export const getResourcesRoute: KaapiServerRoute = {
     method: 'GET',
     path: '/api/resources',
     auth: true,
-    options: { auth: { access: { entity: 'any', scope: ['read', 'admin'] } } },
+    options: {
+        auth: { access: { entity: 'any', scope: ['read', 'admin'] } },
+        tags: ['Resources'],
+    },
     handler: () => [...RESOURCES],
 };
 
@@ -25,6 +28,7 @@ export const postResourcesRoute: KaapiServerRoute<{
                 content: Joi.string().trim().allow(''),
             }),
         },
+        tags: ['Resources'],
     },
     handler: ({
         auth: {
@@ -58,6 +62,7 @@ export const deleteResourcesRoute: KaapiServerRoute<{
                 id: Joi.number().integer().required(),
             }),
         },
+        tags: ['Resources'],
     },
     handler: ({
         auth: {

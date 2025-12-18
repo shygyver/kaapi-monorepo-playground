@@ -15,6 +15,7 @@ const userInfoRoute: KaapiServerRoute<{ AuthUser: { id: string; clientId: string
                 scope: ['openid'], // Requires 'openid' scope
             },
         },
+        tags: ['Auth'],
     },
     handler: async (
         {

@@ -36,7 +36,7 @@ export const oidcDeviceAuthorization = OIDCDeviceAuthorizationBuilder.create()
 
     // Device Authorization
     .authorizationRoute((route) =>
-        route.setPath('/oauth2/v1.0/device_authorization').generateCode(async ({ clientId, scope }) => {
+        route.setPath('/oauth2/v1.0/device_authorization').generateCode(async ({ clientId, scope }, req) => {
             // client exists?
             const client = VALID_CLIENTS.find((c) => c.client_id === clientId);
             if (!client) return null;
@@ -53,7 +53,9 @@ export const oidcDeviceAuthorization = OIDCDeviceAuthorizationBuilder.create()
 
             deviceCodesStore.set(deviceCode, { clientId, scopes: grantedScopes, verified: false, userCode });
 
-            const verificationUri = 'http://localhost:3000/v1.0/verify-device';
+            const forwardedProto = req.headers['x-forwarded-proto'];
+            const protocol = forwardedProto ? forwardedProto : req.server.info.protocol;
+            const verificationUri = `${protocol}://${req.info.host}/v1.0/verify-device`;
             return {
                 device_code: deviceCode,
                 user_code: userCode,

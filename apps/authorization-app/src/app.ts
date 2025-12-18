@@ -1,9 +1,10 @@
 import deviceVerificationRoute from './routes/device-verification';
 import { deleteResourcesRoute, getResourcesRoute, postResourcesRoute } from './routes/resources';
+import { testRoute } from './routes/test';
 import userInfoRoute from './routes/user-info';
+import { cookieSessionAuth, yarPlugin } from './security/cookie-session';
 import oidcAuthFlows from './security/oidc-multiple-flows';
 import { logger } from './utils/logger';
-import yar from '@hapi/yar';
 import { Kaapi } from '@kaapi/kaapi';
 
 export const app = new Kaapi({
@@ -24,19 +25,8 @@ export const app = new Kaapi({
     logger,
 });
 
-await app.base().register({
-    plugin: yar,
-    options: {
-        storeBlank: false,
-        cookieOptions: {
-            password: 'the-password-must-be-at-least-32-characters-long',
-            isSecure: true,
-        },
-    },
-});
-
-// Extend app with auth strategy
-await app.extend(oidcAuthFlows);
+// Extend app with plugins and auth strategies
+await app.extend([yarPlugin, cookieSessionAuth, oidcAuthFlows]);
 
 // Default strategies
 app.base().auth.default({ strategies: oidcAuthFlows.getStrategyName(), mode: 'try' });
@@ -48,4 +38,5 @@ app.route(userInfoRoute)
     .route(getResourcesRoute)
     .route(postResourcesRoute)
     .route(deleteResourcesRoute)
-    .route(deviceVerificationRoute);
+    .route(deviceVerificationRoute)
+    .route(testRoute);

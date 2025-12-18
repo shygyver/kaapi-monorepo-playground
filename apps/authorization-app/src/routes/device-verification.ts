@@ -1,6 +1,6 @@
 import { deviceCodesStore } from '../db/codes';
 import { REGISTERED_USERS } from '../db/users';
-import oidcAuthFlows from '../security/oidc-multiple-flows';
+import { cookieSessionAuth } from '../security/cookie-session';
 import { KaapiServerRoute } from '@kaapi/kaapi';
 import { OAuth2ErrorCode } from '@kaapi/oauth2-auth-design';
 import Joi from 'joi';
@@ -14,7 +14,7 @@ const deviceVerificationRoute: KaapiServerRoute<{
     auth: true,
     options: {
         auth: {
-            strategies: oidcAuthFlows.getStrategyName(), // Ensures only OIDC strategies are used
+            strategy: cookieSessionAuth.getStrategyName(), // Ensures only cookie-session strategy is used
         },
         validate: {
             query: Joi.object({
