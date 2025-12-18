@@ -98,7 +98,7 @@ describe('OIDC Auth Code Flow with PKCE', function () {
         const authRes = await app.base().inject({
             method: 'POST',
             url: `${CONFIG.authPath}?${authParams}`,
-            payload: { username: 'user', password: 'password' },
+            payload: { username: 'user', password: 'crossterm' },
         });
         expect(authRes.statusCode).to.equal(302);
         expect(authRes.headers.location).to.include('code=');
@@ -140,7 +140,7 @@ describe('OIDC Auth Code Flow with PKCE', function () {
         const authRes = await app.base().inject({
             method: 'POST',
             url: `${CONFIG.authPath}?${authParams}`,
-            payload: { username: 'user', password: 'password' },
+            payload: { username: 'user', password: 'crossterm' },
         });
         expect(authRes.statusCode).to.equal(302);
 

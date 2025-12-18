@@ -13,4 +13,4 @@ export const VALID_CLIENTS = [
     },
 ];
 
-export const REGISTERED_USERS = [{ id: 'user-1234', username: 'user', password: 'password', email: 'user@email.com' }];
+export const REGISTERED_USERS = [{ id: 'user-1234', username: 'user', password: 'crossterm', email: 'user@email.com' }];

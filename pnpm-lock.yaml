@@ -116,6 +116,9 @@ importers:
       '@kaapi/oauth2-auth-design':
         specifier: ^0.0.38
         version: 0.0.38
+      '@novice1/api-doc-generator':
+        specifier: ^1.2.5
+        version: 1.2.5
       joi:
         specifier: ^18.0.2
         version: 18.0.2
