@@ -29,7 +29,10 @@ export const app = new Kaapi({
 await app.extend([yarPlugin, cookieSessionAuth, oidcAuthFlows]);
 
 // Default strategies
-app.base().auth.default({ strategies: oidcAuthFlows.getStrategyName(), mode: 'try' });
+app.base().auth.default({
+    strategies: [...oidcAuthFlows.getStrategyName(), cookieSessionAuth.getStrategyName()],
+    mode: 'try',
+});
 
 // Generate keys at launch
 oidcAuthFlows.checkAndRotateKeys().catch(app.log.error);
@@ -40,3 +43,14 @@ app.route(userInfoRoute)
     .route(deleteResourcesRoute)
     .route(deviceVerificationRoute)
     .route(testRoute);
+
+app.base().ext('onPostAuth', (request, h) => {
+    // restrict access to api docs
+    if (request.path.startsWith('/docs/')) {
+        if (!(request.auth.isAuthenticated && request.auth.credentials.scope?.includes('internal:session'))) {
+            return h.redirect('/login').takeover();
+        }
+    }
+
+    return h.continue;
+});

@@ -302,6 +302,7 @@ export const cookieSessionAuth = new CookieSessionAuthDesign({
                     isValid: true,
                     credentials: {
                         user: { id: user.id },
+                        scope: ['internal:session'],
                     },
                 };
             }

@@ -15,6 +15,7 @@ const deviceVerificationRoute: KaapiServerRoute<{
     options: {
         auth: {
             strategy: cookieSessionAuth.getStrategyName(), // Ensures only cookie-session strategy is used
+            scope: ['internal:session'],
         },
         validate: {
             query: Joi.object({

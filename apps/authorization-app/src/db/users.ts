@@ -13,4 +13,13 @@ export const VALID_CLIENTS = [
     },
 ];
 
-export const REGISTERED_USERS = [{ id: 'user-1234', username: 'user', password: 'crossterm', email: 'user@email.com' }];
+export interface User {
+    id: string;
+    username: string;
+    password: string;
+    email: string;
+}
+
+export const REGISTERED_USERS: User[] = [
+    { id: 'user-1234', username: 'user', password: 'crossterm', email: 'user@email.com' },
+];

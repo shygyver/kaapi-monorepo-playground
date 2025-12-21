@@ -72,6 +72,7 @@ describe('OIDC Device Authorization Flow', function () {
                     user: {
                         id: 'user-1234',
                     },
+                    scope: ['internal:session'],
                 },
                 strategy: 'cookie-session',
             },
