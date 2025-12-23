@@ -30,7 +30,7 @@ const combinationPayloadSchema = Joi.object({
     .description('combination nCr inputs')
     .required();
 
-// route
+// register route
 app.route<{ Payload: { n: number; r: 1 | 2 | 3 } }>(
     {
         method: 'POST',

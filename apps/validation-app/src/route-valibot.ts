@@ -47,7 +47,7 @@ const combinationPayloadSchema = v.pipe(
     })
 );
 
-// route
+// register route
 app.base()
     .valibot({
         payload: combinationPayloadSchema,

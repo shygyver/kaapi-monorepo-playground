@@ -17,3 +17,9 @@ services:
       - 8002:3000
     environment:
       - EXTERNAL_URI=http://localhost:8002
+  authorization-app:
+    build: ./apps/authorization-app
+    ports:
+      - 8003:3000
+    environment:
+      - EXTERNAL_URI=http://localhost:8003

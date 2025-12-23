@@ -40,7 +40,7 @@ const combinationPayloadSchema = type([
     })(payload);
 });
 
-// route
+// register route
 app.base()
     .ark({
         payload: combinationPayloadSchema,

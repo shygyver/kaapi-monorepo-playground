@@ -1,5 +1,7 @@
 import { app } from './app';
 import { binomialCoefficient } from './utils';
+import { KaapiServerRoute } from '@kaapi/kaapi';
+import { ZodDocHelper } from '@kaapi/validator-zod';
 import { z } from 'zod';
 
 // payload schema
@@ -37,25 +39,35 @@ const combinationPayloadSchema = z
     )
     .meta({
         description: 'combination nCr inputs',
-        ref: '#/components/schemas/CombinationInputsWithZod',
+        ref: '#/components/schemas/CombinationInputsWithZodAlternative',
     });
 
-// register route
-app.base()
-    .zod({
-        payload: combinationPayloadSchema,
-    })
-    .route(
-        {
-            method: 'POST',
-            path: '/zod/combination',
-            options: {
-                description: 'Calculate the combination of n and r.',
-                tags: ['zod'],
-                payload: {
-                    allow: ['application/json', 'application/x-www-form-urlencoded'],
+// route
+const combinationRoute: KaapiServerRoute<{
+    Payload: z.infer<typeof combinationPayloadSchema>;
+}> = {
+    method: 'POST',
+    path: '/zod/combination-alternative',
+    options: {
+        description: 'Calculate the combination of n and r.',
+        tags: ['zod'],
+        payload: {
+            allow: ['application/json', 'application/x-www-form-urlencoded'],
+        },
+        plugins: {
+            kaapi: {
+                docs: {
+                    helperSchemaProperty: 'zod',
+                    openAPIHelperClass: ZodDocHelper,
                 },
             },
+            zod: {
+                payload: combinationPayloadSchema,
+            },
         },
-        ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
-    );
+    },
+    handler: ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) }),
+};
+
+// register route
+app.route(combinationRoute);
