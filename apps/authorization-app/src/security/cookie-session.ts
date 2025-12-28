@@ -226,6 +226,10 @@ export class CookieSessionAuthDesign extends APIKeyAuthDesign {
         this.inCookie();
     }
 
+    /**
+     * @override
+     * This override disables OpenAPI generation for this security scheme.
+     */
     docs() {
         return undefined;
     }
