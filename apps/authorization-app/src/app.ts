@@ -1,6 +1,5 @@
 import deviceVerificationRoute from './routes/device-verification';
 import { deleteResourcesRoute, getResourcesRoute, postResourcesRoute } from './routes/resources';
-import { testRoute } from './routes/test';
 import userInfoRoute from './routes/user-info';
 import { cookieSessionAuth, yarPlugin } from './security/cookie-session';
 import oidcAuthFlows from './security/oidc-multiple-flows';
@@ -41,8 +40,7 @@ app.route(userInfoRoute)
     .route(getResourcesRoute)
     .route(postResourcesRoute)
     .route(deleteResourcesRoute)
-    .route(deviceVerificationRoute)
-    .route(testRoute);
+    .route(deviceVerificationRoute);
 
 app.base().ext('onPostAuth', (request, h) => {
     // restrict access to api docs

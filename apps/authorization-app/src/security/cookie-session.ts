@@ -1,7 +1,6 @@
 import { REGISTERED_USERS } from '../db/users';
 import yar, { YarOptions } from '@hapi/yar';
-import { APIKeyAuthDesign, KaapiPlugin, KaapiTools } from '@kaapi/kaapi';
-import { ApiKeyUtil } from '@novice1/api-doc-generator';
+import { APIKeyAuthArg, APIKeyAuthDesign, KaapiPlugin, KaapiTools } from '@kaapi/kaapi';
 
 const COOKIE_NAME = 'sid-auth-app';
 
@@ -31,9 +30,24 @@ export const yarPlugin: KaapiPlugin = {
 };
 
 export class CookieSessionAuthDesign extends APIKeyAuthDesign {
-    docs(): ApiKeyUtil {
+    constructor(settings: APIKeyAuthArg) {
+        super(settings);
         this.inCookie();
-        return super.docs();
+    }
+    /* @TODO: docs(): undefined */
+    /**
+     * @override
+     * This method has no effect for this subclass.
+     */
+    inHeader(): this {
+        return this;
+    }
+    /**
+     * @override
+     * This method has no effect for this subclass.
+     */
+    inQuery(): this {
+        return this;
     }
     async integrateHook(t: KaapiTools): Promise<void> {
         await super.integrateHook(t);

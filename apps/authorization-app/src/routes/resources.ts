@@ -1,4 +1,5 @@
 import { Resource, RESOURCES } from '../db/resources';
+import oidcAuthFlows from '../security/oidc-multiple-flows';
 import { KaapiServerRoute } from '@kaapi/kaapi';
 import Joi from 'joi';
 
@@ -7,7 +8,10 @@ export const getResourcesRoute: KaapiServerRoute = {
     path: '/api/resources',
     auth: true,
     options: {
-        auth: { access: { entity: 'any', scope: ['read', 'admin'] } },
+        auth: {
+            strategies: oidcAuthFlows.getStrategyName(),
+            access: { entity: 'any', scope: ['read', 'admin'] },
+        },
         tags: ['Resources'],
     },
     handler: () => [...RESOURCES],
@@ -21,7 +25,10 @@ export const postResourcesRoute: KaapiServerRoute<{
     path: '/api/resources',
     auth: true,
     options: {
-        auth: { access: { entity: 'user', scope: ['write'] } },
+        auth: {
+            strategies: oidcAuthFlows.getStrategyName(),
+            access: { entity: 'user', scope: ['write'] },
+        },
         validate: {
             payload: Joi.object({
                 title: Joi.string().trim().required(),
@@ -56,7 +63,10 @@ export const deleteResourcesRoute: KaapiServerRoute<{
     path: '/api/resources/{id}',
     auth: true,
     options: {
-        auth: { access: { entity: 'app', scope: ['admin'] } },
+        auth: {
+            strategies: oidcAuthFlows.getStrategyName(),
+            access: { entity: 'app', scope: ['admin'] },
+        },
         validate: {
             params: Joi.object({
                 id: Joi.number().integer().required(),
