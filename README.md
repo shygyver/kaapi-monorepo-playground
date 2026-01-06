@@ -19,6 +19,7 @@ This is a playground project so feel free to fork, experiment, and submit PRs wi
 
 ```
 /apps
+  /authorization-app
   /documentation-app
   /testing-app
   /validation-app

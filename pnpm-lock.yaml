@@ -146,6 +146,34 @@ importers:
         specifier: ^10.0.10
         version: 10.0.10
 
+  apps/messaging-app:
+    dependencies:
+      '@hapi/boom':
+        specifier: ^10.0.1
+        version: 10.0.1
+      '@kaapi/kaapi':
+        specifier: ^0.0.39
+        version: 0.0.39
+      '@kaapi/kafka-messaging':
+        specifier: ^0.0.39
+        version: 0.0.39
+      '@kaapi/validator-zod':
+        specifier: ^0.0.39
+        version: 0.0.39(zod@4.3.5)
+      kafkajs:
+        specifier: ^2.2.4
+        version: 2.2.4
+      winston:
+        specifier: ^3.19.0
+        version: 3.19.0
+      zod:
+        specifier: ^4.3.5
+        version: 4.3.5
+    devDependencies:
+      '@types/mocha':
+        specifier: ^10.0.10
+        version: 10.0.10
+
   apps/testing-app:
     dependencies:
       '@hapi/boom':
@@ -636,6 +664,9 @@ packages:
 
   '@kaapi/kaapi@0.0.39':
     resolution: {integrity: sha512-qLu1heKqD2LvnsD125G7C4/DClKCiF7mlgQdRqqP+PhLCVq/Qq+59fcAxlmcBkjOgQdvcwU79lqxXq9/4pj0Og==}
+
+  '@kaapi/kafka-messaging@0.0.39':
+    resolution: {integrity: sha512-HV8a6ykBJfrLMd4t2R6XlCGiqZ70ZUO2IV0GmxiP/CWD4iGg8ERmY2lxpeUGy+wIHzF6J3pCNELEhwR+1SbVvQ==}
 
   '@kaapi/oauth2-auth-design@0.0.39':
     resolution: {integrity: sha512-6nTMQS9KN99afQXaOJOO39d5hxPNN+e+Qdak4PL5QyQ28p/xh7WYj5KAgVkmz1tme+rl1zioh/hURyCeU8ZQ8w==}
@@ -2162,6 +2193,10 @@ packages:
   jwk-to-pem@2.0.7:
     resolution: {integrity: sha512-cSVphrmWr6reVchuKQZdfSs4U9c5Y4hwZggPoz6cbVnTpAVgGRpEuQng86IyqLeGZlhTh+c4MAreB6KbdQDKHQ==}
 
+  kafkajs@2.2.4:
+    resolution: {integrity: sha512-j/YeapB1vfPT2iOIUn/vxdyKEuhuY2PxMBvf5JWux6iSaukAccrMtXEY/Lb7OvavDhOWME589bpLrEdnVHjfjA==}
+    engines: {node: '>=14.0.0'}
+
   kaukau@4.1.7:
     resolution: {integrity: sha512-MXv0dwFmuaAXLRhkiRLF2w9GFxVZwQE3JoS7gs+XF1cSNYgu3jQTLcZ/DKFO4Uq0gK4wUttdPHd2MT3cDpVdgw==}
     hasBin: true
@@ -3212,6 +3247,9 @@ packages:
   zod@4.2.1:
     resolution: {integrity: sha512-0wZ1IRqGGhMP76gLqz8EyfBXKk0J2qo2+H3fi4mcUP/KtTocoX08nmIAHl1Z2kJIZbZee8KOpBCSNPRgauucjw==}
 
+  zod@4.3.5:
+    resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
+
 snapshots:
 
   '@ark/schema@0.56.0':
@@ -3700,6 +3738,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@kaapi/kafka-messaging@0.0.39':
+    dependencies:
+      '@kaapi/kaapi': 0.0.39
+      kafkajs: 2.2.4
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - supports-color
+
   '@kaapi/oauth2-auth-design@0.0.39':
     dependencies:
       '@hapi/boom': 10.0.1
@@ -3753,6 +3799,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@kaapi/validator-zod@0.0.39(zod@4.3.5)':
+    dependencies:
+      '@hapi/boom': 10.0.1
+      '@kaapi/kaapi': 0.0.39
+      '@novice1/api-doc-zod-helper': 0.1.9
+      tslib: 2.8.1
+      zod: 4.3.5
+    transitivePeerDependencies:
+      - supports-color
+
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
       '@emnapi/core': 1.7.1
@@ -3793,7 +3849,7 @@ snapshots:
     dependencies:
       '@novice1/api-doc-generator': 1.2.5
       tslib: 2.8.1
-      zod: 4.2.1
+      zod: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -5385,6 +5441,8 @@ snapshots:
       elliptic: 6.6.1
       safe-buffer: 5.2.1
 
+  kafkajs@2.2.4: {}
+
   kaukau@4.1.7:
     dependencies:
       '@novice1/logger': 1.6.0
@@ -6587,3 +6645,5 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zod@4.2.1: {}
+
+  zod@4.3.5: {}
