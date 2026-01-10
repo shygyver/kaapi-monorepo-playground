@@ -1,19 +1,19 @@
-import { server } from '../src/server';
+import { app } from '../src/app';
 import { expect } from 'chai';
 
 describe('API Endpoints', () => {
     beforeEach(async () => {
-        await server.base().initialize();
+        await app.base().initialize();
     });
 
     afterEach(async () => {
-        await server.stop({
+        await app.stop({
             timeout: 2000,
         });
     });
 
     it('responds with 200 POST /ark/combination', async () => {
-        const res = await server.base().inject({
+        const res = await app.base().inject({
             method: 'post',
             url: '/ark/combination',
             payload: {
@@ -25,7 +25,7 @@ describe('API Endpoints', () => {
     });
 
     it('responds with 200 POST /joi/combination', async () => {
-        const res = await server.base().inject({
+        const res = await app.base().inject({
             method: 'post',
             url: '/joi/combination',
             payload: {
@@ -38,7 +38,7 @@ describe('API Endpoints', () => {
     });
 
     it('responds with 400 POST /valibot/combination', async () => {
-        const res = await server.base().inject({
+        const res = await app.base().inject({
             method: 'post',
             url: '/valibot/combination',
             payload: {
@@ -55,7 +55,7 @@ describe('API Endpoints', () => {
     });
 
     it('responds with 400 POST /zod/combination', async () => {
-        const res = await server.base().inject({
+        const res = await app.base().inject({
             method: 'post',
             url: '/zod/combination',
             payload: {

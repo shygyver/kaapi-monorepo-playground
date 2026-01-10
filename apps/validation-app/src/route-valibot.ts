@@ -1,5 +1,5 @@
-import { app } from './app';
 import { binomialCoefficient } from './utils';
+import { withSchema } from '@kaapi/validator-valibot';
 import * as v from 'valibot';
 
 // payload schema
@@ -47,22 +47,20 @@ const combinationPayloadSchema = v.pipe(
     })
 );
 
-// register route
-app.base()
-    .valibot({
-        payload: combinationPayloadSchema,
-    })
-    .route(
-        {
-            method: 'POST',
-            path: '/valibot/combination',
-            options: {
-                description: 'Calculate the combination of n and r.',
-                tags: ['valibot'],
-                payload: {
-                    allow: ['application/json', 'application/x-www-form-urlencoded'],
-                },
+// create route
+export default withSchema({
+    payload: combinationPayloadSchema,
+}).route(
+    {
+        method: 'POST',
+        path: '/valibot/combination',
+        options: {
+            description: 'Calculate the combination of n and r.',
+            tags: ['valibot'],
+            payload: {
+                allow: ['application/json', 'application/x-www-form-urlencoded'],
             },
         },
-        ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
-    );
+    },
+    ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
+);

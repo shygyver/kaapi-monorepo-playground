@@ -1,3 +1,8 @@
+import routeArktype from './route-arktype';
+import routeJoi from './route-joi';
+import routeValibot from './route-valibot';
+import routeZod from './route-zod';
+import routeZodAlternative from './route-zod-alternative';
 import { Kaapi } from '@kaapi/kaapi';
 import { validatorArk } from '@kaapi/validator-arktype';
 import { validatorValibot } from '@kaapi/validator-valibot';
@@ -28,3 +33,5 @@ export const app = new Kaapi({
 await app.extend(validatorArk);
 await app.extend(validatorValibot);
 await app.extend(validatorZod);
+
+app.route(routeArktype).route(routeJoi).route(routeValibot).route(routeZod).route(routeZodAlternative);

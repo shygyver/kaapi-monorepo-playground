@@ -1,12 +1,12 @@
-import { server } from './server';
+import { app } from './app';
 
 // ---------- start http server ----------
 
-await server.listen();
+await app.listen();
 
-const BASE_URI = process.env.EXTERNAL_URI || server.base().info.uri;
+const BASE_URI = process.env.EXTERNAL_URI || app.base().info.uri;
 
-server.log(`Server running on ${BASE_URI}\n`);
-server.log(`Swagger UI on ${BASE_URI}/docs/api`);
-server.log(`OpenAPI specification on ${BASE_URI}/docs/api/schema`);
-server.log(`Postman collection on ${BASE_URI}/docs/api/schema?format=postman`);
+app.log(`Server running on ${BASE_URI}\n`);
+app.log(`Swagger UI on ${BASE_URI}/docs/api`);
+app.log(`OpenAPI specification on ${BASE_URI}/docs/api/schema`);
+app.log(`Postman collection on ${BASE_URI}/docs/api/schema?format=postman`);

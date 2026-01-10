@@ -1,4 +1,3 @@
-import { app } from './app';
 import { binomialCoefficient } from './utils';
 import { KaapiServerRoute } from '@kaapi/kaapi';
 import { ZodDocHelper } from '@kaapi/validator-zod';
@@ -69,5 +68,4 @@ const combinationRoute: KaapiServerRoute<{
     handler: ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) }),
 };
 
-// register route
-app.route(combinationRoute);
+export default combinationRoute;

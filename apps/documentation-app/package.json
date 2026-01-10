@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
-    "@kaapi/kaapi": "^0.0.39",
+    "@kaapi/kaapi": "^0.0.40",
     "joi": "^18.0.2"
   },
   "devDependencies": {

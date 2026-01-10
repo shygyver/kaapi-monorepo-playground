@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
-    "@kaapi/kaapi": "^0.0.39",
-    "@kaapi/kafka-messaging": "^0.0.39",
-    "@kaapi/validator-zod": "^0.0.39",
+    "@kaapi/kaapi": "^0.0.40",
+    "@kaapi/kafka-messaging": "^0.0.40",
+    "@kaapi/validator-zod": "^0.0.40",
     "kafkajs": "^2.2.4",
     "winston": "^3.19.0",
     "zod": "^4.3.5"

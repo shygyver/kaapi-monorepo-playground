@@ -1,6 +1,6 @@
-import { app } from './app';
 import { binomialCoefficient } from './utils';
 import { RequestBodyDocsModifier } from '@kaapi/kaapi';
+import { withSchema } from '@kaapi/validator-arktype';
 import { type } from 'arktype';
 
 const combinationPayloadSchema = type([
@@ -40,51 +40,49 @@ const combinationPayloadSchema = type([
     })(payload);
 });
 
-// register route
-app.base()
-    .ark({
-        payload: combinationPayloadSchema,
-    })
-    .route(
-        {
-            method: 'POST',
-            path: '/ark/combination',
-            options: {
-                description: 'Calculate the combination of n and r.',
-                tags: ['ark'],
-                payload: {
-                    allow: ['application/json', 'application/x-www-form-urlencoded'],
-                },
-                plugins: {
-                    kaapi: {
-                        docs: {
-                            modifiers: () => ({
-                                requestBody: new RequestBodyDocsModifier()
-                                    .addMediaType('application/json', {
-                                        schema: {
-                                            properties: {
-                                                n: {
-                                                    minimum: 1,
-                                                    maximum: 50,
-                                                },
+// create route
+export default withSchema({
+    payload: combinationPayloadSchema,
+}).route(
+    {
+        method: 'POST',
+        path: '/ark/combination',
+        options: {
+            description: 'Calculate the combination of n and r.',
+            tags: ['ark'],
+            payload: {
+                allow: ['application/json', 'application/x-www-form-urlencoded'],
+            },
+            plugins: {
+                kaapi: {
+                    docs: {
+                        modifiers: () => ({
+                            requestBody: new RequestBodyDocsModifier()
+                                .addMediaType('application/json', {
+                                    schema: {
+                                        properties: {
+                                            n: {
+                                                minimum: 1,
+                                                maximum: 50,
                                             },
                                         },
-                                    })
-                                    .addMediaType('application/x-www-form-urlencoded', {
-                                        schema: {
-                                            properties: {
-                                                n: {
-                                                    minimum: 1,
-                                                    maximum: 50,
-                                                },
+                                    },
+                                })
+                                .addMediaType('application/x-www-form-urlencoded', {
+                                    schema: {
+                                        properties: {
+                                            n: {
+                                                minimum: 1,
+                                                maximum: 50,
                                             },
                                         },
-                                    }),
-                            }),
-                        },
+                                    },
+                                }),
+                        }),
                     },
                 },
             },
         },
-        ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
-    );
+    },
+    ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
+);

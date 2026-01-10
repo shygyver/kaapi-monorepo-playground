@@ -1,5 +1,5 @@
-import { app } from './app';
 import { binomialCoefficient } from './utils';
+import { KaapiServerRoute } from '@kaapi/kaapi';
 import Joi from 'joi';
 
 // payload schema
@@ -30,21 +30,21 @@ const combinationPayloadSchema = Joi.object({
     .description('combination nCr inputs')
     .required();
 
-// register route
-app.route<{ Payload: { n: number; r: 1 | 2 | 3 } }>(
-    {
-        method: 'POST',
-        path: '/joi/combination',
-        options: {
-            description: 'Calculate the combination of n and r.',
-            tags: ['joi'],
-            payload: {
-                allow: ['application/json', 'application/x-www-form-urlencoded'],
-            },
-            validate: {
-                payload: combinationPayloadSchema,
-            },
+// create route
+const route: KaapiServerRoute<{ Payload: { n: number; r: 1 | 2 | 3 } }> = {
+    method: 'POST',
+    path: '/joi/combination',
+    options: {
+        description: 'Calculate the combination of n and r.',
+        tags: ['joi'],
+        payload: {
+            allow: ['application/json', 'application/x-www-form-urlencoded'],
+        },
+        validate: {
+            payload: combinationPayloadSchema,
         },
     },
-    ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) })
-);
+    handler: ({ payload: { n, r } }) => ({ inputs: { n, r }, coefficient: binomialCoefficient(n, r) }),
+};
+
+export default route;
