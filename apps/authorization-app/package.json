@@ -12,8 +12,8 @@
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@hapi/yar": "^11.0.3",
-    "@kaapi/kaapi": "^0.0.40",
-    "@kaapi/oauth2-auth-design": "^0.0.40",
+    "@kaapi/kaapi": "^0.0.41",
+    "@kaapi/oauth2-auth-design": "^0.0.41",
     "@novice1/api-doc-generator": "^1.2.5",
     "joi": "^18.0.2",
     "winston": "^3.19.0"

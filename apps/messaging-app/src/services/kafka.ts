@@ -5,11 +5,11 @@ import { KafkaMessaging } from '@kaapi/kafka-messaging';
  * KafkaMessaging
  */
 export const messaging = new KafkaMessaging({
-    clientId: 'messaging-app-0',
+    clientId: 'messaging-app',
     address: `${process.env.HOST || 'localhost'}:${process.env.PORT || 3004}`,
     brokers: ['localhost:9092'],
     logger,
-    name: 'kafka-messaging',
+    name: 'messaging-app',
 });
 
 export enum Topics {

@@ -1,43 +1,39 @@
 import { pubOrderCreated } from '../services/kafka';
-import { KaapiServerRoute } from '@kaapi/kaapi';
-import { ZodDocHelper } from '@kaapi/validator-zod';
+import { withSchema } from '@kaapi/validator-zod';
 import { z } from 'zod';
 
 let nbOrders = 0;
 
-// payload schema
-const payloadSchema = z
-    .object({
-        items: z
-            .array(
-                z.object({
-                    sku: z.string().meta({
-                        examples: ['A12'],
-                    }),
-                    qty: z
-                        .number()
-                        .int()
-                        .min(1)
-                        .meta({
-                            description: 'quantity',
-                            examples: [3],
-                        }),
-                    price: z.number().meta({
-                        description: 'price',
-                    }),
-                })
-            )
-            .min(1),
-    })
-    .meta({
-        description: 'Order',
-        ref: '#/components/schemas/Order',
-    });
-
 // route
-export const createOrderRoute: KaapiServerRoute<{
-    Payload: z.infer<typeof payloadSchema>;
-}> = {
+export const createOrderRoute = withSchema({
+    payload: z
+        .object({
+            items: z
+                .array(
+                    z.object({
+                        sku: z.string().meta({
+                            examples: ['A12'],
+                        }),
+                        qty: z
+                            .number()
+                            .int()
+                            .min(1)
+                            .meta({
+                                description: 'quantity',
+                                examples: [3],
+                            }),
+                        price: z.number().meta({
+                            description: 'price',
+                        }),
+                    })
+                )
+                .min(1),
+        })
+        .meta({
+            description: 'Order',
+            ref: '#/components/schemas/Order',
+        }),
+}).route({
     method: 'POST',
     path: '/zod/orders',
     options: {
@@ -45,17 +41,6 @@ export const createOrderRoute: KaapiServerRoute<{
         tags: ['Orders'],
         payload: {
             allow: ['application/json', 'application/x-www-form-urlencoded'],
-        },
-        plugins: {
-            kaapi: {
-                docs: {
-                    helperSchemaProperty: 'zod',
-                    openAPIHelperClass: ZodDocHelper,
-                },
-            },
-            zod: {
-                payload: payloadSchema,
-            },
         },
     },
     handler: async ({ payload: { items } }) => {
@@ -68,4 +53,4 @@ export const createOrderRoute: KaapiServerRoute<{
         await pubOrderCreated(order);
         return order;
     },
-};
+});
