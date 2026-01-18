@@ -58,6 +58,22 @@ const start = async () => {
     console.log('👂 Notification service listening...');
 };
 
+async function shutdown() {
+    console.log('🛑 Shutting down Notification Service...');
+    await messaging.shutdown();
+    console.log('👋 Goodbye!');
+}
+
+process.on('SIGINT', async () => {
+    await shutdown();
+    process.exit(0);
+});
+
+process.on('SIGTERM', async () => {
+    await shutdown();
+    process.exit(0);
+});
+
 start().catch((err) => {
     console.error('Failed to start:', err);
     process.exit(1);
