@@ -7,7 +7,7 @@ import { KafkaMessaging } from '@kaapi/kafka-messaging';
 export const messaging = new KafkaMessaging({
     clientId: 'messaging-app',
     address: `${process.env.HOST || 'localhost'}:${process.env.PORT || 3004}`,
-    brokers: ['localhost:9092'],
+    brokers: process.env.KAFKA_BROKERS ? process.env.KAFKA_BROKERS.split(',') : ['localhost:9092'],
     logger,
     name: 'messaging-app',
 });

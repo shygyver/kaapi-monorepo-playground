@@ -2,7 +2,7 @@ FROM docker.io/node:lts-alpine
 
 ENV HOST=0.0.0.0
 ENV PORT=3000
-ENV EXTERNAL_URI=http://localhost:8004
+ENV EXTERNAL_URI=http://localhost:8005
 
 # Container-to-container: kafka:9094 | Host access: localhost:9092
 ENV KAFKA_BROKERS=kafka:9094
