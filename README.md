@@ -21,7 +21,10 @@ This is a playground project so feel free to fork, experiment, and submit PRs wi
 /apps
   /authorization-app
   /documentation-app
+  /messaging-app
+  /notification-app
   /testing-app
+  /user-api
   /validation-app
 ```
 
@@ -73,6 +76,8 @@ docker compose up --build documentation-app
 
 - Documentation generation (OpenAPI, Postman, SwaggerUI)
 - Request data validation (with Arktype, Joi, Valibot, Zod)
+- Authorization (Cookies, OAuth2, OpenID Connect)
+- Messaging (Kafka)
 
 ---
 
